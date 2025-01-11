@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://b6f6k4xe18ysi"]
+
+[ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_iusqt"]
+[ext_resource type="PackedScene" uid="uid://wdg3ixdsal7r" path="res://Models/Snail.glb" id="2_vgmvq"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_r81v0"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_62ql6"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_fcf54"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mk4m7"]
+size = Vector3(1, 1.81641, 1)
+
+[sub_resource type="Resource" id="Resource_30g1k"]
+script = ExtResource("4_62ql6")
+duration = 1.0
+transition = 0
+ease = 2
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.59634)
+script = ExtResource("1_iusqt")
+
+[node name="Pivot" type="Node3D" parent="Player"]
+
+[node name="Snail" parent="Player/Pivot" instance=ExtResource("2_vgmvq")]
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1.07754, 0, 0, 0, 1.81251, 0, 0, 0, 2.69187, -0.00634289, 1.57189, 0.126918)
+shape = SubResource("BoxShape3D_mk4m7")
+
+[node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target", "look_at_target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.59634)
+script = ExtResource("3_r81v0")
+follow_mode = 6
+follow_target = NodePath("../Player/Pivot/Snail")
+look_at_mode = 2
+look_at_target = NodePath("../Player")
+tween_resource = SubResource("Resource_30g1k")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.59634)
+v_offset = 3.02
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("5_fcf54")
