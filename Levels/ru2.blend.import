@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c667gijk321lb"
+uid="uid://hmwi406cb1rg"
 path="res://.godot/imported/ru2.blend-4489eee96445eba3c89ef917212d7de0.scn"
 
 [deps]
@@ -38,7 +38,7 @@ blender/nodes/punctual_lights=true
 blender/nodes/cameras=true
 blender/nodes/custom_properties=true
 blender/nodes/modifiers=1
-blender/meshes/colors=true
+blender/meshes/colors=false
 blender/meshes/uvs=true
 blender/meshes/normals=true
 blender/meshes/tangents=true

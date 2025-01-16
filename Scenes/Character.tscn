@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cjsd88a31ypvn"]
+[gd_scene load_steps=9 format=3 uid="uid://cjsd88a31ypvn"]
 
 [ext_resource type="Script" path="res://Scripts/Character.gd" id="1_8fkih"]
+[ext_resource type="Texture2D" uid="uid://dek0btrswjvfi" path="res://Materials/cookie_5.jpg" id="2_7d8f7"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ocgx3"]
 height = 1.7
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u1dmk"]
-height = 1.18688
+height = 2.06466
 
 [sub_resource type="Animation" id="Animation_ssb18"]
 length = 0.001
@@ -159,7 +160,7 @@ _data = {
 "uncrouch": SubResource("Animation_tu8io")
 }
 
-[node name="Node3D" type="CharacterBody3D"]
+[node name="Node3D" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_8fkih")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -167,15 +168,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01508, 0)
 mesh = SubResource("CapsuleMesh_ocgx3")
 
 [node name="CrouchedCollisionShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.789162, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08669, 0)
 shape = SubResource("CapsuleShape3D_u1dmk")
 
 [node name="UncrouchedCollisionShape2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01508, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13031, 0)
 shape = SubResource("CapsuleShape3D_u1dmk")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70058, 0)
+fov = 60.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+light_projector = ExtResource("2_7d8f7")
+light_size = 0.603
+shadow_enabled = true
+spot_range = 24.833
+spot_angle = 36.36
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
