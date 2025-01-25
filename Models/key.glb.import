@@ -17,7 +17,7 @@ nodes/root_type="Node3D"
 nodes/root_name="Key"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
-nodes/import_as_skeleton_bones=true
+nodes/import_as_skeleton_bones=false
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
@@ -32,18 +32,15 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
-"nodes": {
-"PATH:Sketchfab_model": {
-"import/skip_import": true
-},
-"PATH:Sketchfab_model/key_fbx": {
-"import/skip_import": true
-},
-"PATH:Sketchfab_model/key_fbx/RootNode": {
-"import/skip_import": true
-},
-"PATH:Sketchfab_model/key_fbx/RootNode/Plane": {
-"import/skip_import": true
+"meshes": {
+"Sketchfab_Scene_Plane_Material_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Meshes/key.res"
 }
 }
 }

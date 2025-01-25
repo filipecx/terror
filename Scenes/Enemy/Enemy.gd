@@ -7,7 +7,7 @@ extends CharacterBody3D
 @export var rotation_speed: float = 5.0 # How quickly the enemy rotates towards the player
 
 # Reference to the player node
-#@export var player_path: 
+#@export var player_path:
 var player: CharacterBody3D
 
 func _ready():
@@ -28,7 +28,7 @@ func follow_player(delta: float):
 		direction = direction.normalized()
 
 		# Rotate smoothly towards the player
-		var target_rotation = transform.basis.looking_at(player.global_position - global_position, Vector3.UP)
+		var target_rotation = Basis.looking_at(player.global_position - global_position, Vector3.UP)
 		transform.basis = transform.basis.slerp(target_rotation, rotation_speed * delta)
 
 		# Move towards the player
