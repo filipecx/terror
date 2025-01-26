@@ -14,5 +14,5 @@ highlight_material = ExtResource("2_cq3fw")
 mesh = ExtResource("2_dlw30")
 
 [node name="Area3D#CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
-transform = Transform3D(447.226, 0, 0, 0, 212.811, 0, 0, 0, 245.573, -2.02451, 6.28644, 92.3959)
+transform = Transform3D(797.846, 0, 0, 0, 200, 0, 0, 0, 438.127, -2.02451, 6.28644, -2.43388)
 shape = SubResource("BoxShape3D_c6byu")

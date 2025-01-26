@@ -1,6 +1,7 @@
 extends Node3D
 
 @export var is_interactable: bool = true
+@export var interact_text: String = "use"
 @export var highlight_material: StandardMaterial3D
 
 var original_material: Material
@@ -23,6 +24,9 @@ func reset_highlight() -> void:
 		$MeshInstance3D.material_override = original_material
 	else:
 		$MeshInstance3D.material_override = null
+
+func get_interact_text() -> String:
+	return "Press to " + interact_text;
 
 func interact() -> void:
 	if is_interactable:

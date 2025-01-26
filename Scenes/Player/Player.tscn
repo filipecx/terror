@@ -29,20 +29,19 @@ shape = SubResource("CapsuleShape3D_u1dmk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70058, 0)
 fov = 60.0
 
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(-1.01435, 0, -7.26445e-08, 0, 0.660195, 0, 8.86772e-08, 0, -0.830957, 0, -0.00307, -2.27121)
+target_position = Vector3(0, 0, 2)
+collision_mask = 5
+collide_with_areas = true
+collide_with_bodies = false
+debug_shape_custom_color = Color(0, 0.94902, 0, 1)
+
 [node name="SpotLight3D" type="SpotLight3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0341864, 0, 0)
 light_energy = 7.889
 light_projector = ExtResource("2_7d8f7")
 light_size = 0.603
 shadow_enabled = true
-spot_range = 10000.0
+spot_range = 10.079
 spot_angle = 36.36
-
-[node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1.01435, 0, 0, 0, 0.660195, 0, 0, 0, 1.25183, 0, 1.61893, 0)
-target_position = Vector3(0, 0, 2)
-collision_mask = 5
-collide_with_areas = true
-collide_with_bodies = false
-debug_shape_custom_color = Color(0, 0.94902, 0, 1)
-debug_shape_thickness = 5

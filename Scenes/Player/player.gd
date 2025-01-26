@@ -1,16 +1,20 @@
 extends CharacterBody3D
 
 @export var sensitivity = 3
-@export var interact_distance: float = 500.0
+@export var credit: float = 0.0
+@export var interact_distance: float = 1.0
 
-const SPEED = 50.0
-const CROUCH_SPEED = 20.0
-const JUMP_VELOCITY = 40.5
-var crouched: bool
-var last_highlighted: Area3D = null
-
-@onready var raycast = $RayCast3D
 @onready var camera = $Camera3D
+@onready var raycast = $Camera3D/RayCast3D
+
+signal interaction_prompt
+
+const SPEED = 5.0
+const CROUCH_SPEED = 2.0
+const JUMP_VELOCITY = 5.0
+var crouched: bool
+var last_object_on_aim: Area3D = null
+
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -44,7 +48,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
 
-	move_and_slide()
+	velocity = move_and_slide(velocity, Vector3.UP)
 
 	# Interaction logic
 	handle_interaction()
@@ -54,32 +58,31 @@ func _input(event: InputEvent) -> void:
 		get_tree().quit()
 	if event is InputEventMouseMotion:
 		rotation.y -= event.relative.x / 1000 * sensitivity
-		$Camera3D.rotation.x -= event.relative.y / 1000 * sensitivity
+		camera.rotation.x -= event.relative.y / 1000 * sensitivity
 		rotation.x = clamp(rotation.x, PI / -2, PI / 2)
-		$Camera3D.rotation.x = clamp($Camera3D.rotation.x, -2, 2)
+		camera.rotation.x = clamp(camera.rotation.x, -2, 2)
 
 func handle_interaction():
 	# Set the raycast length to the interact distance
 	raycast.target_position = Vector3(0, 0, -interact_distance)
-	raycast.rotation = camera.rotation
 	raycast.force_raycast_update()
 
 	if raycast.is_colliding():
 		var hit_object = raycast.get_collider()
-		if hit_object and hit_object.has_method("highlight"):
-			if last_highlighted != hit_object:
-				if last_highlighted:
-					last_highlighted.reset_highlight()  # Reset the previous highlight
+		if hit_object and hit_object != last_object_on_aim:
+			reset_highlights()  # Reset the previous object's highlight
+			if hit_object.has_method("highlight"):
 				hit_object.highlight()
-				last_highlighted = hit_object
+			if hit_object.has_method("get_interact_text"):
+				emit_signal("interaction_prompt", hit_object.get_interact_text())
 			if Input.is_action_just_pressed("interact") and hit_object.has_method("interact"):
 				hit_object.interact()
-		else:
-			reset_highlights()
+			last_object_on_aim = hit_object
 	else:
 		reset_highlights()
+		emit_signal("interaction_prompt", "")
 
 func reset_highlights():
-	if last_highlighted:
-		last_highlighted.reset_highlight()
-		last_highlighted = null
+	if last_object_on_aim:
+		last_object_on_aim.reset_highlight()
+		last_object_on_aim = null
