@@ -2,10 +2,11 @@ extends CharacterBody3D
 
 @export var sensitivity = 3
 @export var credit: float = 0.0
-@export var interact_distance: float = 1.0
+@export var interact_distance: float = 10.0
 
 @onready var camera = $Camera3D
 @onready var raycast = $Camera3D/RayCast3D
+@onready var inventory = $Inventory
 
 signal interaction_prompt
 
@@ -13,7 +14,7 @@ const SPEED = 5.0
 const CROUCH_SPEED = 2.0
 const JUMP_VELOCITY = 5.0
 var crouched: bool
-var last_object_on_aim: Area3D = null
+var last_object_on_aim: StaticBody3D = null
 
 
 func _ready() -> void:
@@ -48,7 +49,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
 
-	velocity = move_and_slide(velocity, Vector3.UP)
+	move_and_slide()
 
 	# Interaction logic
 	handle_interaction()
@@ -75,14 +76,19 @@ func handle_interaction():
 				hit_object.highlight()
 			if hit_object.has_method("get_interact_text"):
 				emit_signal("interaction_prompt", hit_object.get_interact_text())
-			if Input.is_action_just_pressed("interact") and hit_object.has_method("interact"):
-				hit_object.interact()
 			last_object_on_aim = hit_object
+		if Input.is_action_just_pressed("interact") and hit_object.has_method("interact"):
+			hit_object.interact(self)
 	else:
 		reset_highlights()
 		emit_signal("interaction_prompt", "")
 
 func reset_highlights():
-	if last_object_on_aim:
+	if last_object_on_aim and is_instance_valid(last_object_on_aim):
 		last_object_on_aim.reset_highlight()
 		last_object_on_aim = null
+
+func add_to_inventory(item_data: ItemData, quantity: int = 1) -> bool:
+	if inventory:
+		return inventory.add_item(item_data, quantity)
+	return false

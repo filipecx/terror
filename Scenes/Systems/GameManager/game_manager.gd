@@ -1,6 +1,6 @@
 extends Node
 
-@onready var player = $Node3D
+@onready var player = $Player
 @onready var game_ui = $GameUi
 
 @export var countdown_time: float = 20.0
