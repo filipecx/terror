@@ -16,21 +16,21 @@
     - [] Criar pedaços de Chave (4 Pedaços de Chave);
     - [] Criar Chave Inteira (Que só vai existir quando juntar as 4 Chaves);
     - [] Bolsa;
-    - [] Cartão do RU (Para passar na catraca);
-    - [] Dinheiro (Para abastecer o cartão);
-    - [] Máquina de por crédito (Para abastecer o cartão);
-    - [] Bandejão de Água para lavar talher;
-    - [] Bandeja;
-    - [] Porta Talher;
-    - [] Prato Sujo;
-    - [] Garfo e Faca Sujos;
-    - [] Prato;
-    - [] Garfo e Faca;
+    - [x] Cartão do RU (Para passar na catraca);
+    - [x] Dinheiro (Para abastecer o cartão);
+    - [x] Máquina de por crédito (Para abastecer o cartão);
+    - [x] Bandejão de Água para lavar talher;
+    - [x] Bandeja;
+    - [x] Porta Talher;
+    - [x] Prato Sujo;
+    - [x] Garfo e Faca Sujos;
+    - [x] Prato;
+    - [x] Garfo e Faca;
     - [] Pano;
-    - [] Doces e Embalagem de Doces;
-    - [] Lixeira;
-    - [] Refeitório;
-    - [] Catraca;
+    - [x] Doces e Embalagem de Doces;
+    - [x] Lixeira;
+    - [x] Refeitório;
+    - [x] Catraca;
 
 ### Desejavéis
 
