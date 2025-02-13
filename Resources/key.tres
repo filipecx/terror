@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://br0sya0mvjflf"]
+
+[ext_resource type="Texture2D" uid="uid://dmt3sy74jddep" path="res://Assets/key.png" id="1_xum66"]
+[ext_resource type="Script" path="res://Scenes/Systems/Inventory/item_data.gd" id="2_th7wy"]
+
+[resource]
+script = ExtResource("2_th7wy")
+item_name = "Objective Key"
+description = "A key for open the gate"
+category = 0
+stackable = true
+max_stack = 3
+icon = ExtResource("1_xum66")
+scene_path = "res://Scenes/Items/Key.tscn"

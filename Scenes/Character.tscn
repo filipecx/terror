@@ -6,7 +6,7 @@
 height = 1.7
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u1dmk"]
-height = 1.18688
+height = 2.06466
 
 [sub_resource type="Animation" id="Animation_ssb18"]
 length = 0.001
@@ -159,23 +159,33 @@ _data = {
 "uncrouch": SubResource("Animation_tu8io")
 }
 
-[node name="Node3D" type="CharacterBody3D"]
+[node name="Node3D" type="CharacterBody3D" groups=["Player"]]
+wall_min_slide_angle = 0.0
+floor_stop_on_slope = false
 script = ExtResource("1_8fkih")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01508, 0)
+transform = Transform3D(1, 0, 0, 0, 1.84823, 0, 0, 0, 1, 0, 1.47815, 0)
 mesh = SubResource("CapsuleMesh_ocgx3")
 
 [node name="CrouchedCollisionShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.789162, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08669, 0)
 shape = SubResource("CapsuleShape3D_u1dmk")
 
 [node name="UncrouchedCollisionShape2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01508, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39611, 0)
 shape = SubResource("CapsuleShape3D_u1dmk")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70058, 0)
+fov = 60.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.110872, 0.400866)
+light_size = 0.603
+shadow_enabled = true
+spot_range = 24.833
+spot_angle = 36.36
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=4 uid="uid://dmsw2cj1uiwfg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_osdni"]
+resource_name = "pilastra"
+cull_mode = 2
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8fe5k"]
+_surfaces = [{
+"aabb": AABB(-0.312784, -2.69081, -0.4632, 0.625567, 5.38162, 0.926399),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAADAAEAAAACAAMAAgAHAAMAAgAGAAcABgAFAAcABgAEAAUABAABAAUABAAAAAEAAgAEAAYAAgAAAAQABwABAAMABwAFAAEA"),
+"name": "pilastra",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP////8AAAAAAAAAAAAAAAD//wAAAAD//wAA//8AAP///////wAA//8AAAAAAAD/////AAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_k7ucn"]
+resource_name = "pilastra_Cube_002"
+_surfaces = [{
+"aabb": AABB(-0.312784, -2.69081, -0.4632, 0.625567, 5.38162, 0.926399),
+"attribute_data": PackedByteArray("/1////8f/z//XwAA/5////+fAAD/3/8//1//v/8f/3//X/+//5//v/+f/7//3/9//1//P/9f/z//X/8//5//P/+f/z//n/8//1//f/9f/3//X/9//5//f/+f/3//n/9/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAAJAAMAAAAGAAkACAAVAAoACAATABUAFAARABcAFAAOABEADQAEAA8ADQACAAQABwAMABIABwABAAwAFgAFAAsAFgAQAAUA"),
+"material": SubResource("StandardMaterial3D_osdni"),
+"name": "pilastra",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAAAA////vwAAAAD///+/AAD/////VNUAAP//////vwAA////////AAAAAAAAVNUAAAAAAAD/vwAAAAAAAP//AAD//wAAVNUAAP//AAD//wAA//8AAP////8AAP///7///wAA////v///AAD//1TV/////////7///////////////////1TV//8AAAAA/7///wAAAAD/////AAAAAFTV/////wAA////////AAD///////8AAFTVVNVU1QAA/3//////VNVU1f//////f/+/VNVU1QAA/3//v/+/VNVU1f+//7//f/+/AAD/f/////+qKqoq//////9//7+qKqoqAAD/f/+//7+qKqoq/7//v/9//7+qKqoq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_8fe5k")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2s4qk"]
+size = Vector3(0.599243, 5.36523, 0.933533)
+
+[node name="Pilastra" type="StaticBody3D"]
+
+[node name="pilastra" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_k7ucn")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00714111, 0.00683594, -0.00692749)
+shape = SubResource("BoxShape3D_2s4qk")

@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=3 uid="uid://cjsd88a31ypvn"]
+
+[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_8fkih"]
+[ext_resource type="Texture2D" uid="uid://dek0btrswjvfi" path="res://Materials/cookie_5.jpg" id="2_7d8f7"]
+[ext_resource type="Script" path="res://Scenes/Systems/Inventory/inventory.gd" id="3_iyevk"]
+[ext_resource type="PackedScene" uid="uid://dfodvhc8vbl06" path="res://Scenes/Systems/Inventory/InventorySlot.tscn" id="4_kr04o"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ocgx3"]
+height = 1.7
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u1dmk"]
+height = 2.06466
+
+[sub_resource type="LabelSettings" id="LabelSettings_m47f7"]
+line_spacing = 1.0
+font_size = 14
+
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
+collision_layer = 2
+wall_min_slide_angle = 0.443314
+floor_block_on_wall = false
+script = ExtResource("1_8fkih")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01508, 0)
+mesh = SubResource("CapsuleMesh_ocgx3")
+
+[node name="CrouchedCollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08669, 0)
+shape = SubResource("CapsuleShape3D_u1dmk")
+
+[node name="UncrouchedCollisionShape2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13031, 0)
+shape = SubResource("CapsuleShape3D_u1dmk")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.365, -0.252371)
+fov = 60.0
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(1.01435, 0, 0, 0, 0.660195, 0, 0, 0, 0.830957, 0, 0, 0)
+target_position = Vector3(0, 0, -10)
+collision_mask = 4
+debug_shape_custom_color = Color(0, 0.94902, 0, 1)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0341864, 0, 0)
+light_energy = 7.889
+light_projector = ExtResource("2_7d8f7")
+light_size = 0.603
+shadow_enabled = true
+spot_range = 1143.29
+spot_angle = 45.91
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("3_iyevk")
+inventory_slot_scene = ExtResource("4_kr04o")
+
+[node name="InventoryWindow" type="Panel" parent="Inventory"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 71.0
+offset_top = -181.0
+offset_right = 434.0
+offset_bottom = -28.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="SlotContainer" type="GridContainer" parent="Inventory/InventoryWindow"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 10.0
+offset_right = 359.0
+offset_bottom = 145.0
+scale = Vector2(0.955284, 0.9874)
+columns = 5
+
+[node name="InfoText" type="Label" parent="Inventory/InventoryWindow"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -79.0
+offset_bottom = -42.0
+grow_horizontal = 2
+scale = Vector2(1, 2.04)
+label_settings = SubResource("LabelSettings_m47f7")
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 3

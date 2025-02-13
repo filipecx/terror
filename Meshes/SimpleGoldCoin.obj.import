@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b1ip5nsutoloy"
+path="res://.godot/imported/SimpleGoldCoin.obj-c9f3ee98beb6ca1def0740469e891929.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SimpleGoldCoin.obj-c9f3ee98beb6ca1def0740469e891929.mesh"]
+
+source_file="res://Meshes/SimpleGoldCoin.obj"
+dest_files=["res://.godot/imported/SimpleGoldCoin.obj-c9f3ee98beb6ca1def0740469e891929.mesh", "res://.godot/imported/SimpleGoldCoin.obj-c9f3ee98beb6ca1def0740469e891929.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
