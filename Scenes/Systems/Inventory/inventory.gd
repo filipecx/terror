@@ -38,11 +38,19 @@ func remove_item(item_data: ItemData, quantity: int = 1) -> bool:
 				return true
 	return false  # Item not found
 
+func get_item(item_data: ItemData) -> Dictionary:
+	for slot in slots:
+		if slot["item_data"] == item_data:
+			return slot
+	return {}
+
+func has_item(item_data: ItemData) -> bool:
+	return get_item(item_data) != {}
+
 # Get all slots
 func get_slots() -> Array:
 	return slots
 
-# Create slots in the GridContainer
 # Create slots in the GridContainer
 func create_slots() -> void:
 

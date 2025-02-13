@@ -81,3 +81,4 @@
  3.1 - Encontrar saco de bombom vazio e jogar no lixo vermelho (Plástico) -- Caso não consiga implementar
 
 
+# Procurar sobre occlusion culling

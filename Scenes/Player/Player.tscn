@@ -17,6 +17,8 @@ font_size = 14
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 collision_layer = 2
+wall_min_slide_angle = 0.443314
+floor_block_on_wall = false
 script = ExtResource("1_8fkih")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -32,11 +34,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13031, 0)
 shape = SubResource("CapsuleShape3D_u1dmk")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70058, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.365, -0.252371)
 fov = 60.0
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
-transform = Transform3D(1.01435, 0, 0, 0, 0.660195, 0, 0, 0, 0.830957, 0, -0.003, 0)
+transform = Transform3D(1.01435, 0, 0, 0, 0.660195, 0, 0, 0, 0.830957, 0, 0, 0)
 target_position = Vector3(0, 0, -10)
 collision_mask = 4
 debug_shape_custom_color = Color(0, 0.94902, 0, 1)
@@ -47,8 +49,8 @@ light_energy = 7.889
 light_projector = ExtResource("2_7d8f7")
 light_size = 0.603
 shadow_enabled = true
-spot_range = 10.079
-spot_angle = 36.36
+spot_range = 1143.29
+spot_angle = 45.91
 
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("3_iyevk")

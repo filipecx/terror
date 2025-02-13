@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://dgm0hg4bcnloe"]
+
+[ext_resource type="Texture2D" uid="uid://dyn5ktc1wvhhe" path="res://Scenes/Levels/textures/cartaoFrente.jpeg" id="1_6uvyf"]
+[ext_resource type="Script" path="res://Scenes/Systems/Inventory/item_data.gd" id="2_x1src"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfx5r"]
+atlas = ExtResource("1_6uvyf")
+region = Rect2(786.542, 979.102, 1500.04, 2379.47)
+
+[resource]
+script = ExtResource("2_x1src")
+item_name = "R.U Card"
+description = "A card to enter R.U food area"
+category = 0
+stackable = false
+max_stack = 1
+icon = SubResource("AtlasTexture_cfx5r")
+scene_path = ""

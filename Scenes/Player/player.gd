@@ -1,7 +1,8 @@
 extends CharacterBody3D
 
 @export var sensitivity = 3
-@export var credit: float = 0.0
+@export var credit: int = 0
+@export var money: float = 0.0
 @export var interact_distance: float = 10.0
 
 @onready var camera = $Camera3D
@@ -9,12 +10,14 @@ extends CharacterBody3D
 @onready var inventory = $Inventory
 
 signal interaction_prompt
+signal update_money
+signal update_credit
 
 const SPEED = 5.0
 const CROUCH_SPEED = 2.0
 const JUMP_VELOCITY = 5.0
 var crouched: bool
-var last_object_on_aim: StaticBody3D = null
+var last_object_on_aim: RigidBody3D = null
 
 
 func _ready() -> void:
@@ -91,4 +94,35 @@ func reset_highlights():
 func add_to_inventory(item_data: ItemData, quantity: int = 1) -> bool:
 	if inventory:
 		return inventory.add_item(item_data, quantity)
+	return false
+
+func remove_from_inventory(item_data: ItemData, quantity: int = 1) -> bool:
+	if inventory:
+		return inventory.remove_item(item_data, quantity)
+	return false
+
+func add_money(amount: float) -> void:
+	money += amount
+	emit_signal("update_money", money)
+
+func subtract_money(amount: float) -> void:
+	money -= amount
+	emit_signal("update_money", money)
+
+func add_credit(amount: int = 1) -> void:
+	credit += amount
+	emit_signal("update_credit", credit)
+
+func subtract_credit(amount: int = -1) -> void:
+	credit -= amount
+	emit_signal("update_credit", credit)
+
+func get_item(item_data: ItemData) -> Dictionary:
+	if inventory:
+		return inventory.get_item(item_data)
+	return {}
+
+func has_item(item_data: ItemData) -> bool:
+	if inventory:
+		return inventory.has_item(item_data)
 	return false

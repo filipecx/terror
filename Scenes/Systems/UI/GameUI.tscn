@@ -41,10 +41,15 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "5.00 min"
 
-[node name="Money" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="Credit" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "0.00 CR"
+
+[node name="Money" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "$ 0.00 "
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = 8

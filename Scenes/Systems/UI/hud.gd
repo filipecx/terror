@@ -2,6 +2,14 @@ extends Control
 
 @onready var interaction_label = $CanvasLayer/InteractLabel
 @onready var clock_label = $CanvasLayer/PanelContainer/MarginContainer/HBoxContainer/Time
+@onready var credit_label = $CanvasLayer/PanelContainer/MarginContainer/HBoxContainer/Credit
+@onready var money_label = $CanvasLayer/PanelContainer/MarginContainer/HBoxContainer/Money
+
+func update_money(money: float) -> void:
+	money_label.text = "$ %.2f" % money
+
+func update_credit(credit: int) -> void:
+	credit_label.text = "CR: %02d" % credit
 
 func set_interaction_text(text: String) -> void:
 	interaction_label.text = text

@@ -1,4 +1,4 @@
-extends InteractableObject
+extends CollectableObject
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,6 +12,5 @@ func _process(delta: float) -> void:
 
 func interact(player) -> void:
 	if is_interactable:
-		print(item_data.item_name + ": " + item_data.description)
 		player.add_to_inventory(item_data)
 		self.queue_free()
