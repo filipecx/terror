@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=3 uid="uid://do0tgvqi2bp8x"]
+
+[ext_resource type="PackedScene" uid="uid://bh0em578t2qe4" path="res://Scenes/Systems/GameManager/GameManager.tscn" id="1_cfgmv"]
+[ext_resource type="PackedScene" uid="uid://b008cj3fl7yrj" path="res://Scenes/Enemy/Enemy.tscn" id="1_igjpg"]
+[ext_resource type="PackedScene" path="res://Scenes/cenario.tscn" id="2_kivs8"]
+[ext_resource type="PackedScene" uid="uid://cjsd88a31ypvn" path="res://Scenes/Player/Player.tscn" id="3_c3d1o"]
+[ext_resource type="PackedScene" uid="uid://q8gbxcqshxnf" path="res://Scenes/Systems/UI/GameUI.tscn" id="4_7gm6e"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x3rv7"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_energy_multiplier = 3.0
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_ism7g"]
+sky_material = SubResource("ProceduralSkyMaterial_x3rv7")
+
+[sub_resource type="Environment" id="Environment_bt6uk"]
+background_mode = 2
+background_energy_multiplier = 0.01
+sky = SubResource("Sky_ism7g")
+tonemap_mode = 2
+
+[node name="Node3D" type="Node3D"]
+
+[node name="GameManager" parent="." instance=ExtResource("1_cfgmv")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="GameManager"]
+environment = SubResource("Environment_bt6uk")
+
+[node name="Lesma" parent="GameManager" instance=ExtResource("1_igjpg")]
+transform = Transform3D(0.997097, 0, 0.076145, 0, 1, 0, -0.076145, 0, 0.997097, 0, 0, -2.90195)
+
+[node name="Cenario" parent="GameManager" instance=ExtResource("2_kivs8")]
+
+[node name="Player" parent="GameManager" instance=ExtResource("3_c3d1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -21.0072)
+
+[node name="GameUi" parent="GameManager" instance=ExtResource("4_7gm6e")]
+
+[editable path="GameManager/Cenario"]

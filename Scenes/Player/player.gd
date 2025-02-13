@@ -17,7 +17,7 @@ const SPEED = 5.0
 const CROUCH_SPEED = 2.0
 const JUMP_VELOCITY = 5.0
 var crouched: bool
-var last_object_on_aim: RigidBody3D = null
+var last_object_on_aim: PhysicsBody3D = null
 
 
 func _ready() -> void:
