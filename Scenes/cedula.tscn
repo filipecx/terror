@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=4 uid="uid://djxdr83qbicpb"]
+
+[ext_resource type="Texture2D" uid="uid://r8weps0fog7g" path="res://Models/cedula_1real.png" id="1_16hd6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2t2h0"]
+resource_name = "1real.png"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_16hd6")
+roughness = 0.5
+texture_repeat = false
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_sukum"]
+_surfaces = [{
+"aabb": AABB(-0.368239, -0.00812054, -0.168514, 0.736478, 0.0162412, 0.337029),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("AAADAAIAAAABAAMABQAHAAYABQAEAAcAAwAEAAIAAwAHAAQAAAAGAAEAAAAFAAYAAQAHAAMAAQAGAAcAAgAFAAAAAgAEAAUA"),
+"name": "1real.png",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("z4m8voAMBTwAjyw+0Im8PoAMBTwAjyw+z4m8voAMBTwAjyy+0Im8PoAMBTwAjyy+z4m8vgAMBbwAjyy+z4m8vgAMBbwAjyw+0Im8PgAMBbwAjyw+0Im8PgAMBbwAjyy+")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_76y6m"]
+resource_name = "cedula_1real_png"
+_surfaces = [{
+"aabb": AABB(-0.368239, -0.00812054, -0.168514, 0.736478, 0.0162412, 0.337029),
+"attribute_data": PackedByteArray("AAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAAAAAAIA/AAAAAAAAgD8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAAAAAAIA/AAAAAAAAgD8AAAAA"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAAKAAYAAAAEAAoAEAAXABQAEAANABcACwAMAAcACwAWAAwAAQATAAUAAQAPABMAAwAVAAkAAwASABUACAARAAIACAAOABEA"),
+"material": SubResource("StandardMaterial3D_2t2h0"),
+"name": "1real.png",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("z4m8voAMBTwAjyw+z4m8voAMBTwAjyw+z4m8voAMBTwAjyw+0Im8PoAMBTwAjyw+0Im8PoAMBTwAjyw+0Im8PoAMBTwAjyw+z4m8voAMBTwAjyy+z4m8voAMBTwAjyy+z4m8voAMBTwAjyy+0Im8PoAMBTwAjyy+0Im8PoAMBTwAjyy+0Im8PoAMBTwAjyy+z4m8vgAMBbwAjyy+z4m8vgAMBbwAjyy+z4m8vgAMBbwAjyy+z4m8vgAMBbwAjyw+z4m8vgAMBbwAjyw+z4m8vgAMBbwAjyw+0Im8PgAMBbwAjyw+0Im8PgAMBbwAjyw+0Im8PgAMBbwAjyw+0Im8PgAMBbwAjyy+0Im8PgAMBbwAjyy+0Im8PgAMBbwAjyy+/38AAP///z//////////v////3////+/AAD/f////7//fwAA////P/////////+//38AAP///z//f/9/////P////3////+/AAD/f////7//fwAA////P/9//3////8//3//f////z//f///////v////3////+//////////7//f///////v////3////+/AAD/f////7//////////v/9///////+/AAD/f////7//f/9/////P/9///////+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_sukum")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uclyk"]
+size = Vector3(0.735474, 0.0238647, 0.340576)
+
+[node name="Cedula" type="StaticBody3D"]
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_76y6m")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.10352e-05, 0.00283813, -0.00305176)
+shape = SubResource("BoxShape3D_uclyk")

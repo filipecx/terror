@@ -27,10 +27,12 @@ environment = SubResource("Environment_bt6uk")
 transform = Transform3D(16, 0, 0, 0, 0.1, 0, 0, 0, 15.6, 0, 0, 0)
 use_collision = true
 
-[node name="Node3D" parent="." instance=ExtResource("1_rp8j8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.644689, -25.1759)
-
 [node name="Lesma" parent="." instance=ExtResource("8_244jp")]
 transform = Transform3D(0.997097, 0, 0.076145, 0, 1, 0, -0.076145, 0, 0.997097, 0, 0, 5.00515)
 
 [node name="Cenario" parent="." instance=ExtResource("3_vo6cu")]
+
+[node name="Node3D" parent="." instance=ExtResource("1_rp8j8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.693391, -26.2648)
+
+[editable path="Node3D"]
