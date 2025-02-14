@@ -1,0 +1,93 @@
+[gd_scene load_steps=11 format=4 uid="uid://djxdr83qbicpb"]
+
+[ext_resource type="Texture2D" uid="uid://r8weps0fog7g" path="res://Models/cedula_1real.png" id="1_16hd6"]
+[ext_resource type="Script" path="res://Scenes/Items/gold.gd" id="1_au452"]
+[ext_resource type="Script" path="res://Scenes/Systems/Inventory/item_data.gd" id="2_jt3p4"]
+[ext_resource type="Material" uid="uid://c8u512lfr61sc" path="res://Materials/interactable_highlights.tres" id="3_jca5h"]
+
+[sub_resource type="Resource" id="Resource_e8i8t"]
+script = ExtResource("2_jt3p4")
+item_name = "Gold"
+description = "A note"
+category = 1
+stackable = true
+max_stack = 99
+scene_path = ""
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2t2h0"]
+resource_name = "1real.png"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_16hd6")
+roughness = 0.5
+texture_repeat = false
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_sukum"]
+_surfaces = [{
+"aabb": AABB(-0.368239, -0.00812054, -0.168514, 0.736478, 0.0162412, 0.337029),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("AAADAAIAAAABAAMABQAHAAYABQAEAAcAAwAEAAIAAwAHAAQAAAAGAAEAAAAFAAYAAQAHAAMAAQAGAAcAAgAFAAAAAgAEAAUA"),
+"name": "1real.png",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("z4m8voAMBTwAjyw+0Im8PoAMBTwAjyw+z4m8voAMBTwAjyy+0Im8PoAMBTwAjyy+z4m8vgAMBbwAjyy+z4m8vgAMBbwAjyw+0Im8PgAMBbwAjyw+0Im8PgAMBbwAjyy+")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_76y6m"]
+resource_name = "cedula_1real_png"
+_surfaces = [{
+"aabb": AABB(-0.368239, -0.00812054, -0.168514, 0.736478, 0.0162412, 0.337029),
+"attribute_data": PackedByteArray("AAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAAAAAAIA/AAAAAAAAgD8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAAAAAAIA/AAAAAAAAgD8AAAAA"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAAKAAYAAAAEAAoAEAAXABQAEAANABcACwAMAAcACwAWAAwAAQATAAUAAQAPABMAAwAVAAkAAwASABUACAARAAIACAAOABEA"),
+"material": SubResource("StandardMaterial3D_2t2h0"),
+"name": "1real.png",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("z4m8voAMBTwAjyw+z4m8voAMBTwAjyw+z4m8voAMBTwAjyw+0Im8PoAMBTwAjyw+0Im8PoAMBTwAjyw+0Im8PoAMBTwAjyw+z4m8voAMBTwAjyy+z4m8voAMBTwAjyy+z4m8voAMBTwAjyy+0Im8PoAMBTwAjyy+0Im8PoAMBTwAjyy+0Im8PoAMBTwAjyy+z4m8vgAMBbwAjyy+z4m8vgAMBbwAjyy+z4m8vgAMBbwAjyy+z4m8vgAMBbwAjyw+z4m8vgAMBbwAjyw+z4m8vgAMBbwAjyw+0Im8PgAMBbwAjyw+0Im8PgAMBbwAjyw+0Im8PgAMBbwAjyw+0Im8PgAMBbwAjyy+0Im8PgAMBbwAjyy+0Im8PgAMBbwAjyy+/38AAP///z//////////v////3////+/AAD/f////7//fwAA////P/////////+//38AAP///z//f/9/////P////3////+/AAD/f////7//fwAA////P/9//3////8//3//f////z//f///////v////3////+//////////7//f///////v////3////+/AAD/f////7//////////v/9///////+/AAD/f////7//f/9/////P/9///////+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_sukum")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_uo3cr"]
+_surfaces = [{
+"aabb": AABB(-0.339371, -0.0207469, -0.139647, 0.678743, 0.0414938, 0.279293),
+"attribute_data": PackedByteArray("AAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAAAAAAIA/AAAAAAAAgD8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAAAAAAIA/AAAAAAAAgD8AAAAA"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAAGAAoAAAAKAAQAEAAUABcAEAAXAA0ACwAHAAwACwAMABYAAQAFABMAAQATAA8AAwAJABUAAwAVABIACAACABEACAARAA4A"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("FsKtvlD1qbyO/w4+FsKtvlD1qbyO/w4+FsKtvlD1qbyO/w4+F8KtPlD1qbyO/w4+F8KtPlD1qbyO/w4+F8KtPlD1qbyO/w4+FsKtvlD1qbyO/w6+FsKtvlD1qbyO/w6+FsKtvlD1qbyO/w6+F8KtPlD1qbyO/w6+F8KtPlD1qbyO/w6+F8KtPlD1qbyO/w6+FsKtvpD1qTyO/w6+FsKtvpD1qTyO/w6+FsKtvpD1qTyO/w6+FsKtvpD1qTyO/w4+FsKtvpD1qTyO/w4+FsKtvpD1qTyO/w4+F8KtPpD1qTyO/w4+F8KtPpD1qTyO/w4+F8KtPpD1qTyO/w4+F8KtPpD1qTyO/w6+F8KtPpD1qTyO/w6+F8KtPpD1qTyO/w6+AIAAAP///z//////////v///AID///+/AAAAgP///78AgAAA////P/////////+/AIAAAP///z//f/9/////P///AID///+/AAAAgP///78AgAAA////P/9//3////8//3//f////z8AgP//////v///AID///+//////////78AgP//////v///AID///+/AAAAgP///7//////////vwCA//////+/AAAAgP///7//f/9/////PwCA//////+/")
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uclyk"]
+size = Vector3(0.735474, 0.0238647, 0.340576)
+
+[node name="Cedula" type="StaticBody3D" node_paths=PackedStringArray("item_highlight_mesh")]
+collision_layer = 5
+script = ExtResource("1_au452")
+money = 1.0
+interact_text = "get richier"
+item_highlight_mesh = NodePath("MeshInstance3D/Outline")
+item_data = SubResource("Resource_e8i8t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_76y6m")
+skeleton = NodePath("")
+
+[node name="Outline" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1.2068, 0, 0, 0, 0.218898, 0, 0, 0, 1.6, 0, 0, 0)
+visible = false
+mesh = SubResource("ArrayMesh_uo3cr")
+surface_material_override/0 = ExtResource("3_jca5h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.10352e-05, 0.00283813, -0.00305176)
+shape = SubResource("BoxShape3D_uclyk")

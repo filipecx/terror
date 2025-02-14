@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://rgt730pl6f5a"]
+
+[ext_resource type="Script" path="res://Scenes/Systems/Inventory/item_data.gd" id="1_q1hpr"]
+
+[resource]
+script = ExtResource("1_q1hpr")
+item_name = "Catraca"
+description = "Impede a passagem de quem não tem crédito"
+category = 1
+stackable = false
+max_stack = 1
+scene_path = ""

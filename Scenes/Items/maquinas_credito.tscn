@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://deqxfww65pnbg"]
+[gd_scene load_steps=11 format=4 uid="uid://deqxfww65pnbg"]
 
 [ext_resource type="Texture2D" uid="uid://b5gnd4jq2pagp" path="res://Models/maquina_creditos_maquina_creeditos.png" id="1_6udst"]
-[ext_resource type="Script" path="res://Scenes/Systems/Interaction/collectable_object.gd" id="1_48lt3"]
+[ext_resource type="Script" path="res://Scenes/Items/credit_machine.gd" id="1_dyhgr"]
+[ext_resource type="Resource" uid="uid://dgm0hg4bcnloe" path="res://Resources/RUCard.tres" id="2_7b7kl"]
+[ext_resource type="Resource" uid="uid://cpt8dsc12fcv7" path="res://Resources/CreditMachine.tres" id="2_ryilj"]
 [ext_resource type="Material" uid="uid://c8u512lfr61sc" path="res://Materials/interactable_highlights.tres" id="3_qj3yd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jtiiu"]
@@ -60,8 +62,11 @@ size = Vector3(0.762573, 0.756561, 0.765503)
 
 [node name="Maquinas_credito" type="StaticBody3D" node_paths=PackedStringArray("item_highlight_mesh")]
 collision_layer = 5
-script = ExtResource("1_48lt3")
+script = ExtResource("1_dyhgr")
+requested_item = ExtResource("2_7b7kl")
+tax = 1.0
 item_highlight_mesh = NodePath("MeshInstance3D/Outline")
+item_data = ExtResource("2_ryilj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_53ddc")

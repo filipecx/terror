@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://cjsd88a31ypvn"]
+[gd_scene load_steps=7 format=3 uid="uid://cjsd88a31ypvn"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_8fkih"]
-[ext_resource type="Texture2D" uid="uid://dek0btrswjvfi" path="res://Materials/cookie_5.jpg" id="2_7d8f7"]
 [ext_resource type="Script" path="res://Scenes/Systems/Inventory/inventory.gd" id="3_iyevk"]
 [ext_resource type="PackedScene" uid="uid://dfodvhc8vbl06" path="res://Scenes/Systems/Inventory/InventorySlot.tscn" id="4_kr04o"]
 
@@ -44,13 +43,7 @@ collision_mask = 4
 debug_shape_custom_color = Color(0, 0.94902, 0, 1)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0341864, 0, 0)
-light_energy = 7.889
-light_projector = ExtResource("2_7d8f7")
-light_size = 0.603
-shadow_enabled = true
-spot_range = 1143.29
-spot_angle = 45.91
+spot_range = 10.0
 
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("3_iyevk")

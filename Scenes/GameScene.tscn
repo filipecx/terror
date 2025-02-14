@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://do0tgvqi2bp8x"]
+[gd_scene load_steps=11 format=3 uid="uid://do0tgvqi2bp8x"]
 
 [ext_resource type="PackedScene" uid="uid://bh0em578t2qe4" path="res://Scenes/Systems/GameManager/GameManager.tscn" id="1_cfgmv"]
-[ext_resource type="PackedScene" uid="uid://b008cj3fl7yrj" path="res://Scenes/Enemy/Enemy.tscn" id="1_igjpg"]
-[ext_resource type="PackedScene" path="res://Scenes/cenario.tscn" id="2_kivs8"]
-[ext_resource type="PackedScene" uid="uid://cjsd88a31ypvn" path="res://Scenes/Player/Player.tscn" id="3_c3d1o"]
+[ext_resource type="PackedScene" uid="uid://b008cj3fl7yrj" path="res://Scenes/lesma.tscn" id="1_igjpg"]
+[ext_resource type="PackedScene" uid="uid://ctgms144qf6b5" path="res://Scenes/cenario.tscn" id="2_kivs8"]
+[ext_resource type="Script" path="res://Scenes/Systems/Objective/objective_manager.gd" id="3_fbdks"]
 [ext_resource type="PackedScene" uid="uid://q8gbxcqshxnf" path="res://Scenes/Systems/UI/GameUI.tscn" id="4_7gm6e"]
+[ext_resource type="PackedScene" uid="uid://cjsd88a31ypvn" path="res://Scenes/Player/Player.tscn" id="5_4hxdw"]
+[ext_resource type="PackedScene" uid="uid://djxdr83qbicpb" path="res://Scenes/Items/cedula.tscn" id="5_aislc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x3rv7"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -20,7 +22,7 @@ background_energy_multiplier = 0.01
 sky = SubResource("Sky_ism7g")
 tonemap_mode = 2
 
-[node name="Node3D" type="Node3D"]
+[node name="root" type="Node3D"]
 
 [node name="GameManager" parent="." instance=ExtResource("1_cfgmv")]
 
@@ -30,10 +32,23 @@ environment = SubResource("Environment_bt6uk")
 [node name="Lesma" parent="GameManager" instance=ExtResource("1_igjpg")]
 transform = Transform3D(0.997097, 0, 0.076145, 0, 1, 0, -0.076145, 0, 0.997097, 0, 0, -2.90195)
 
+[node name="ObjectiveManager" type="Node3D" parent="GameManager"]
+script = ExtResource("3_fbdks")
+
+[node name="Player" parent="GameManager" instance=ExtResource("5_4hxdw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.331888, 1.05586, -21.4884)
+
 [node name="Cenario" parent="GameManager" instance=ExtResource("2_kivs8")]
 
-[node name="Player" parent="GameManager" instance=ExtResource("3_c3d1o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -21.0072)
+[node name="Cedula" parent="GameManager/Cenario/Objetos" index="5"]
+money = 5.0
+
+[node name="Cedula2" parent="GameManager/Cenario/Objetos" index="6" instance=ExtResource("5_aislc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26885, 0.607799, -38.2395)
+
+[node name="Cedula3" parent="GameManager/Cenario/Objetos" index="7" instance=ExtResource("5_aislc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2219, 1.8493, -20.1688)
+money = 1.5
 
 [node name="GameUi" parent="GameManager" instance=ExtResource("4_7gm6e")]
 

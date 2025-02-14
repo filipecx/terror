@@ -30,6 +30,9 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		if not self.get_meta("can_jump", true):
+			print("Jumping is disabled in this area.")
+			return
 		velocity.y = JUMP_VELOCITY
 
 	# Handle movement

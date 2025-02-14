@@ -9,7 +9,7 @@ func update_money(money: float) -> void:
 	money_label.text = "$ %.2f" % money
 
 func update_credit(credit: int) -> void:
-	credit_label.text = "CR: %02d" % credit
+	credit_label.text = "%02d CR" % credit
 
 func set_interaction_text(text: String) -> void:
 	interaction_label.text = text
