@@ -1,21 +1,9 @@
-[gd_scene load_steps=12 format=4 uid="uid://b04shang4qar6"]
+[gd_scene load_steps=10 format=4 uid="uid://b04shang4qar6"]
 
 [ext_resource type="Texture2D" uid="uid://b1fi4xg72y8js" path="res://Models/papel_doce_goiabada.png" id="1_7sh6w"]
 [ext_resource type="Script" path="res://Scenes/Systems/Interaction/collectable_object.gd" id="1_plb3g"]
-[ext_resource type="Script" path="res://Scenes/Systems/Inventory/item_data.gd" id="2_wv1p0"]
+[ext_resource type="Resource" uid="uid://ccqsoj2s5wr6m" path="res://Resources/Goiabada.tres" id="2_6rcim"]
 [ext_resource type="Material" uid="uid://c8u512lfr61sc" path="res://Materials/interactable_highlights.tres" id="3_iklni"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_hf7f6"]
-
-[sub_resource type="Resource" id="Resource_jpmr2"]
-script = ExtResource("2_wv1p0")
-item_name = "Goiabada"
-description = "Melhor goiabada da cidade"
-category = 1
-stackable = true
-max_stack = 99
-icon = SubResource("ViewportTexture_hf7f6")
-scene_path = ""
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kevuh"]
 resource_name = "Material.005"
@@ -78,7 +66,7 @@ collision_layer = 5
 script = ExtResource("1_plb3g")
 interact_text = "collect"
 item_highlight_mesh = NodePath("MeshInstance3D/Outline")
-item_data = SubResource("Resource_jpmr2")
+item_data = ExtResource("2_6rcim")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_vym3g")

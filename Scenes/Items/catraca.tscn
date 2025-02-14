@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://bj26f4osvd6f6"]
+[gd_scene load_steps=12 format=4 uid="uid://bj26f4osvd6f6"]
 
 [ext_resource type="Script" path="res://Scenes/Items/catraca.gd" id="1_wta1n"]
 [ext_resource type="PackedScene" uid="uid://cyx30awodwtc8" path="res://Scenes/ferros_catraca.tscn" id="1_x6a27"]
 [ext_resource type="Resource" uid="uid://rgt730pl6f5a" path="res://Resources/Catraca.tres" id="2_43ct8"]
 [ext_resource type="Material" uid="uid://c8u512lfr61sc" path="res://Materials/interactable_highlights.tres" id="2_gpof0"]
+[ext_resource type="AudioStream" uid="uid://dfpb3cxenumak" path="res://Assets/Sounds/turnstile.mp3" id="5_whnrt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wuy8f"]
 resource_name = "ferroPreto"
@@ -61,14 +62,11 @@ _surfaces = [{
 size = Vector3(0.902161, 1.42432, 0.915039)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4aepk"]
-size = Vector3(0.529175, 1, 0.916367)
+size = Vector3(0.0583739, 0.0965576, 0.712504)
 
 [node name="Catraca" type="StaticBody3D" node_paths=PackedStringArray("item_highlight_mesh")]
 collision_layer = 5
 script = ExtResource("1_wta1n")
-required_credits = null
-is_interactable = null
-interact_text = null
 item_highlight_mesh = NodePath("MeshInstance3D/Outline")
 item_data = ExtResource("2_43ct8")
 
@@ -94,7 +92,15 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NoJumpZone"]
-transform = Transform3D(32.4297, 0, 0, 0, 20, 0, 0, 0, 24.6427, 1.17798, 0, 0.754104)
+transform = Transform3D(436.172, 0, 0, 0, 20, 0, 0, 0, 24.6427, 5.09128, 0, 6.66236)
+shape = SubResource("BoxShape3D_4aepk")
+
+[node name="TresspassZone" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TresspassZone"]
+transform = Transform3D(26.5564, 0, 0, 0, 20, 0, 0, 0, 3.61192, -0.0712734, 0.0598145, -0.317003)
 shape = SubResource("BoxShape3D_4aepk")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
@@ -103,5 +109,10 @@ light_color = Color(0.827451, 0, 0, 1)
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.33
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_whnrt")
+
 [connection signal="body_entered" from="NoJumpZone" to="." method="on_body_entered"]
 [connection signal="body_exited" from="NoJumpZone" to="." method="on_body_exited"]
+[connection signal="body_entered" from="TresspassZone" to="." method="on_body_entered"]
+[connection signal="body_exited" from="TresspassZone" to="." method="on_body_exited"]

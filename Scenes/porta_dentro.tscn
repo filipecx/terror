@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=4 uid="uid://bjltbfjfp6wnb"]
+[gd_scene load_steps=6 format=4 uid="uid://bjltbfjfp6wnb"]
+
+[ext_resource type="Script" path="res://Scenes/porta_dentro.gd" id="1_cdjp8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7t5dn"]
 resource_name = "ferroPreto"
@@ -43,6 +45,7 @@ shadow_mesh = SubResource("ArrayMesh_dvb0q")
 size = Vector3(0.351563, 4.5152, 2.99487)
 
 [node name="Porta_dentro" type="StaticBody3D"]
+script = ExtResource("1_cdjp8")
 
 [node name="mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.95984, 0, 0.280549, 0, 1, 0, -0.280549, 0, 0.95984, 0, 2.50079, 0)

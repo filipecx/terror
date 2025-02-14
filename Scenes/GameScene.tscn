@@ -52,4 +52,6 @@ money = 1.5
 
 [node name="GameUi" parent="GameManager" instance=ExtResource("4_7gm6e")]
 
+[connection signal="door_open_signal" from="GameManager/Cenario/Objetos/Catraca" to="GameManager/Cenario/Objetos/Porta_dentro" method="open_door"]
+
 [editable path="GameManager/Cenario"]
