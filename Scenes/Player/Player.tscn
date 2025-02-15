@@ -33,7 +33,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13031, 0)
 shape = SubResource("CapsuleShape3D_u1dmk")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.365, -0.252371)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, -0.328093)
 fov = 60.0
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
@@ -43,7 +43,10 @@ collision_mask = 4
 debug_shape_custom_color = Color(0, 0.94902, 0, 1)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Camera3D"]
-spot_range = 10.0
+distance_fade_enabled = true
+spot_range = 34.0
+spot_angle = 35.0
+spot_angle_attenuation = 2.21914
 
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("3_iyevk")
