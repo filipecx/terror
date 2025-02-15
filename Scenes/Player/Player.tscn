@@ -8,7 +8,7 @@
 height = 1.7
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u1dmk"]
-height = 2.06466
+height = 2.02428
 
 [sub_resource type="LabelSettings" id="LabelSettings_m47f7"]
 line_spacing = 1.0
@@ -25,11 +25,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01508, 0)
 mesh = SubResource("CapsuleMesh_ocgx3")
 
 [node name="CrouchedCollisionShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08669, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18617, 0)
 shape = SubResource("CapsuleShape3D_u1dmk")
 
 [node name="UncrouchedCollisionShape2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13031, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18011, 0)
 shape = SubResource("CapsuleShape3D_u1dmk")
 
 [node name="Camera3D" type="Camera3D" parent="."]
