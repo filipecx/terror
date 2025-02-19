@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cyx30awodwtc8" path="res://Scenes/ferros_catraca.tscn" id="1_x6a27"]
 [ext_resource type="Resource" uid="uid://rgt730pl6f5a" path="res://Resources/Catraca.tres" id="2_43ct8"]
 [ext_resource type="Material" uid="uid://c8u512lfr61sc" path="res://Materials/interactable_highlights.tres" id="2_gpof0"]
-[ext_resource type="AudioStream" uid="uid://dfpb3cxenumak" path="res://Assets/Sounds/turnstile.mp3" id="5_whnrt"]
+[ext_resource type="AudioStream" uid="uid://cuvbciojrpnuf" path="res://Assets/Sounds/catraca.wav" id="5_pvtcf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wuy8f"]
 resource_name = "ferroPreto"
@@ -110,7 +110,7 @@ light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.33
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("5_whnrt")
+stream = ExtResource("5_pvtcf")
 
 [connection signal="body_entered" from="NoJumpZone" to="." method="on_body_entered"]
 [connection signal="body_exited" from="NoJumpZone" to="." method="on_body_exited"]
