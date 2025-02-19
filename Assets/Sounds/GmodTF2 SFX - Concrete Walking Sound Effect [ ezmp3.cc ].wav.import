@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ctk0voevjhwm1"
+path="res://.godot/imported/GmodTF2 SFX - Concrete Walking Sound Effect [ ezmp3.cc ].wav-5f087cde9417c687d2e0af3c70ed307c.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/GmodTF2 SFX - Concrete Walking Sound Effect [ ezmp3.cc ].wav"
+dest_files=["res://.godot/imported/GmodTF2 SFX - Concrete Walking Sound Effect [ ezmp3.cc ].wav-5f087cde9417c687d2e0af3c70ed307c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -8,6 +8,7 @@ extends CharacterBody3D
 @onready var camera = $Camera3D
 @onready var raycast = $Camera3D/RayCast3D
 @onready var inventory = $Inventory
+@onready var walkingSound = $AudioStreamPlayer3D
 
 signal interaction_prompt
 signal update_money
@@ -51,6 +52,10 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
+		if is_on_floor():
+			if !walkingSound.playing:
+				walkingSound.pitch_scale = randf_range(1, 1.2)
+				walkingSound.play()
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)

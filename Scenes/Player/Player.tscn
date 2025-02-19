@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjsd88a31ypvn"]
+[gd_scene load_steps=8 format=3 uid="uid://cjsd88a31ypvn"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_8fkih"]
 [ext_resource type="Script" path="res://Scenes/Systems/Inventory/inventory.gd" id="3_iyevk"]
+[ext_resource type="AudioStream" uid="uid://ctk0voevjhwm1" path="res://Assets/Sounds/GmodTF2 SFX - Concrete Walking Sound Effect [ ezmp3.cc ].wav" id="4_1hf8f"]
 [ext_resource type="PackedScene" uid="uid://dfodvhc8vbl06" path="res://Scenes/Systems/Inventory/InventorySlot.tscn" id="4_kr04o"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ocgx3"]
@@ -85,3 +86,7 @@ label_settings = SubResource("LabelSettings_m47f7")
 horizontal_alignment = 1
 vertical_alignment = 2
 autowrap_mode = 3
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_1hf8f")
+volume_db = -20.0
