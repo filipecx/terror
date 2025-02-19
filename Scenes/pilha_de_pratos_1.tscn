@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://d4d4b6k4vqo38"]
+[gd_scene load_steps=6 format=4 uid="uid://d4d4b6k4vqo38"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l2yec"]
 resource_name = "prato"
@@ -44,6 +44,9 @@ shadow_mesh = SubResource("ArrayMesh_vd1wj")
 height = 1.17319
 radius = 0.282231
 
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_q7byk"]
+size = Vector3(0.523098, 1.16476, 0.537047)
+
 [node name="Pilha_de_pratos1" type="StaticBody3D"]
 
 [node name="mesh" type="MeshInstance3D" parent="."]
@@ -52,3 +55,6 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CylinderShape3D_bswkf")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = SubResource("BoxOccluder3D_q7byk")

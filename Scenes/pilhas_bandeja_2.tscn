@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://mfw0n85n6g3o"]
+[gd_scene load_steps=6 format=4 uid="uid://mfw0n85n6g3o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n4os2"]
 resource_name = "azul"
@@ -43,6 +43,9 @@ shadow_mesh = SubResource("ArrayMesh_2kkuv")
 [sub_resource type="BoxShape3D" id="BoxShape3D_eajlr"]
 size = Vector3(1.26733, 0.443268, 0.909668)
 
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_81gfq"]
+size = Vector3(1.26203, 0.445979, 0.891958)
+
 [node name="Pilhas_bandeja2" type="StaticBody3D"]
 
 [node name="mesh" type="MeshInstance3D" parent="."]
@@ -52,3 +55,6 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00134277, -0.00111389, 0.0012207)
 shape = SubResource("BoxShape3D_eajlr")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = SubResource("BoxOccluder3D_81gfq")

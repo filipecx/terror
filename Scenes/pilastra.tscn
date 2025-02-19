@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://dmsw2cj1uiwfg"]
+[gd_scene load_steps=6 format=4 uid="uid://dmsw2cj1uiwfg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_osdni"]
 resource_name = "pilastra"
@@ -40,6 +40,9 @@ shadow_mesh = SubResource("ArrayMesh_8fe5k")
 [sub_resource type="BoxShape3D" id="BoxShape3D_2s4qk"]
 size = Vector3(0.599243, 5.36523, 0.933533)
 
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_oej7a"]
+size = Vector3(0.613157, 5.40693, 0.947607)
+
 [node name="Pilastra" type="StaticBody3D"]
 
 [node name="pilastra" type="MeshInstance3D" parent="."]
@@ -49,3 +52,6 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00714111, 0.00683594, -0.00692749)
 shape = SubResource("BoxShape3D_2s4qk")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = SubResource("BoxOccluder3D_oej7a")

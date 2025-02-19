@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://cv52ty4yu68tl"]
+[gd_scene load_steps=8 format=4 uid="uid://cv52ty4yu68tl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c0yot"]
 resource_name = "ferroPreto"
@@ -73,6 +73,9 @@ size = Vector3(1.97894, 0.173767, 7.49744)
 [sub_resource type="BoxShape3D" id="BoxShape3D_fpitg"]
 size = Vector3(0.652344, 0.0431213, 6.18726)
 
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_q1qvx"]
+size = Vector3(3.34526, 1.41888, 7.45515)
+
 [node name="Mesa" type="StaticBody3D"]
 
 [node name="assentoMea" type="MeshInstance3D" parent="."]
@@ -90,3 +93,7 @@ shape = SubResource("BoxShape3D_fpitg")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.30272, -0.326051, 0.02771)
 shape = SubResource("BoxShape3D_fpitg")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.493617, 0)
+occluder = SubResource("BoxOccluder3D_q1qvx")
