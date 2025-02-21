@@ -80,7 +80,7 @@ mesh = SubResource("ArrayMesh_lud2n")
 surface_material_override/0 = ExtResource("2_gpof0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0248108, -0.212158, -0.0424805)
+transform = Transform3D(1.23703, 0, 0.848379, 0, 1.5, 0, -0.848379, 0, 1.23703, 0.189767, 0.186887, -0.351781)
 shape = SubResource("BoxShape3D_yxcbx")
 
 [node name="Ferros_catraca" parent="." instance=ExtResource("1_x6a27")]
