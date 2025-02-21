@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://ev7nsxkfwf8q"]
+[gd_scene load_steps=10 format=4 uid="uid://ev7nsxkfwf8q"]
 
-[ext_resource type="Script" path="res://Scenes/Systems/Interaction/collectable_object.gd" id="1_avcyk"]
+[ext_resource type="Script" path="res://Scenes/Items/pilha_de_pratos.gd" id="1_4s334"]
 [ext_resource type="Resource" uid="uid://doovn4b2v3d3s" path="res://Resources/Prato.tres" id="2_sh3j5"]
 [ext_resource type="Material" uid="uid://c8u512lfr61sc" path="res://Materials/interactable_highlights.tres" id="3_y01sm"]
+[ext_resource type="AudioStream" uid="uid://dqrv671j2boq2" path="res://Assets/Sounds/plastico.wav" id="4_05bop"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6wpt6"]
 resource_name = "prato"
@@ -63,7 +64,7 @@ radius = 0.2747
 
 [node name="Pilha_de_pratos2" type="StaticBody3D" node_paths=PackedStringArray("item_highlight_mesh")]
 collision_layer = 5
-script = ExtResource("1_avcyk")
+script = ExtResource("1_4s334")
 should_consume = false
 interact_text = "get"
 item_highlight_mesh = NodePath("MeshInstance3D/Outline")
@@ -81,5 +82,5 @@ surface_material_override/0 = ExtResource("3_y01sm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CylinderShape3D_37ive")
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
-occluder = SubResource("BoxOccluder3D_vjfi2")
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_05bop")

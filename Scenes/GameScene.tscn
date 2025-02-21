@@ -34,24 +34,18 @@ environment = SubResource("Environment_bt6uk")
 script = ExtResource("3_fbdks")
 
 [node name="Player" parent="GameManager" instance=ExtResource("5_4hxdw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.367, 0.702803, -49.8438)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.331888, 1.05586, -21.4884)
 
 [node name="Lesma" parent="GameManager" instance=ExtResource("1_igjpg")]
 
 [node name="Cenario" parent="GameManager" instance=ExtResource("2_kivs8")]
 
-[node name="Cedula" parent="GameManager/Cenario/Objetos" index="5"]
-money = 5.0
-
-[node name="Cedula2" parent="GameManager/Cenario/Objetos" index="6" instance=ExtResource("5_aislc")]
+[node name="Cedula2" parent="GameManager/Cenario" instance=ExtResource("5_aislc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26885, 0.607799, -38.2395)
 
-[node name="Cedula3" parent="GameManager/Cenario/Objetos" index="7" instance=ExtResource("5_aislc")]
+[node name="Cedula3" parent="GameManager/Cenario" instance=ExtResource("5_aislc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2219, 1.8493, -20.1688)
 money = 1.5
-
-[node name="Lixeira_vermelha" parent="GameManager/Cenario/Objetos" index="51"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.74502, 1.59184, -23.1735)
 
 [node name="GameUi" parent="GameManager" instance=ExtResource("4_7gm6e")]
 
@@ -59,7 +53,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.74502, 1.59184, -23.1735)
 stream = ExtResource("8_ispq8")
 volume_db = 6.095
 autoplay = true
-
-[connection signal="door_open_signal" from="GameManager/Cenario/Objetos/Catraca" to="GameManager/Cenario/Objetos/Porta_dentro" method="open_door"]
-
-[editable path="GameManager/Cenario"]

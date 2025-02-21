@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=4 uid="uid://bj1wi8eqt5srd"]
+[gd_scene load_steps=9 format=4 uid="uid://bj1wi8eqt5srd"]
 
-[ext_resource type="Script" path="res://Scenes/garfos.gd" id="1_sv5kp"]
+[ext_resource type="Script" path="res://Scenes/Items/garfos.gd" id="1_4mqw6"]
+[ext_resource type="Resource" uid="uid://des7gfcnkjwcq" path="res://Resources/Garfo.tres" id="2_bupjq"]
 [ext_resource type="Material" uid="uid://c8u512lfr61sc" path="res://Materials/interactable_highlights.tres" id="2_mjqin"]
 [ext_resource type="AudioStream" uid="uid://dr441l6a7cugt" path="res://Assets/Sounds/talheres2.mp3" id="3_y3h24"]
 
@@ -51,9 +52,11 @@ height = 0.613374
 
 [node name="Garfos" type="StaticBody3D" node_paths=PackedStringArray("item_highlight_mesh")]
 collision_layer = 5
-script = ExtResource("1_sv5kp")
-interact_text = "Pegar"
+script = ExtResource("1_4mqw6")
+should_consume = false
+interact_text = "get"
 item_highlight_mesh = NodePath("MeshInstance3D/Outline")
+item_data = ExtResource("2_bupjq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_hitf6")
@@ -67,7 +70,7 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("2_mjqin")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.762805, 0, 0, 0, 0.494702, 0.474099, 0, -0.938843, 0.249816, 0, 0, 0.0452182)
+transform = Transform3D(1, 0, 0, 0, 0.46617, 0.884695, 0, -0.884695, 0.46617, 0, 0, 0.0452182)
 shape = SubResource("CapsuleShape3D_as5rs")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
