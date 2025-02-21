@@ -2,9 +2,12 @@ extends Node3D
 class_name InteractableObject
 
 @export var is_interactable: bool = true
+@export var should_consume: bool = true
 @export var interact_text: String = "use"
 @export var item_highlight_mesh: MeshInstance3D
 @export var item_data: ItemData = null
+
+signal interacted(interactor)
 
 
 func _ready() -> void:
@@ -22,4 +25,4 @@ func get_interact_text() -> String:
 func interact(player: CharacterBody3D) -> void:
 	if is_interactable:
 		print("Interacted with:", item_data.item_name)
-		self.queue_free();
+		interacted.emit(player)

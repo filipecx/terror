@@ -135,3 +135,11 @@ func has_item(item_data: ItemData) -> bool:
 	if inventory:
 		return inventory.has_item(item_data)
 	return false
+
+func has_items(item_data: Array[ItemData]) -> bool:
+	if inventory:
+		for item in item_data:
+			if not inventory.has_item(item):
+				return false
+		return true
+	return false
