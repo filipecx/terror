@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://do0tgvqi2bp8x"]
+[gd_scene load_steps=12 format=3 uid="uid://do0tgvqi2bp8x"]
 
 [ext_resource type="PackedScene" uid="uid://bh0em578t2qe4" path="res://Scenes/Systems/GameManager/GameManager.tscn" id="1_cfgmv"]
 [ext_resource type="PackedScene" uid="uid://b008cj3fl7yrj" path="res://Scenes/lesma.tscn" id="1_igjpg"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://q8gbxcqshxnf" path="res://Scenes/Systems/UI/GameUI.tscn" id="4_7gm6e"]
 [ext_resource type="PackedScene" uid="uid://cjsd88a31ypvn" path="res://Scenes/Player/Player.tscn" id="5_4hxdw"]
 [ext_resource type="PackedScene" uid="uid://djxdr83qbicpb" path="res://Scenes/Items/cedula.tscn" id="5_aislc"]
+[ext_resource type="AudioStream" uid="uid://enehc4eucyrq" path="res://Assets/Sounds/ambiente.mp3" id="8_ispq8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x3rv7"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -36,7 +37,7 @@ transform = Transform3D(0.997097, 0, 0.076145, 0, 1, 0, -0.076145, 0, 0.997097, 
 script = ExtResource("3_fbdks")
 
 [node name="Player" parent="GameManager" instance=ExtResource("5_4hxdw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.331888, 1.05586, -21.4884)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.367, 0.702803, -49.8438)
 
 [node name="Cenario" parent="GameManager" instance=ExtResource("2_kivs8")]
 
@@ -51,6 +52,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2219, 1.8493, -20.1688)
 money = 1.5
 
 [node name="GameUi" parent="GameManager" instance=ExtResource("4_7gm6e")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("8_ispq8")
+volume_db = 6.095
+autoplay = true
 
 [connection signal="door_open_signal" from="GameManager/Cenario/Objetos/Catraca" to="GameManager/Cenario/Objetos/Porta_dentro" method="open_door"]
 

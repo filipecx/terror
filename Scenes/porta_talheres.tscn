@@ -1,7 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://c4mj6hc5qmyea"]
-
-[ext_resource type="PackedScene" uid="uid://bj1wi8eqt5srd" path="res://Scenes/garfos.tscn" id="1_rgu37"]
-[ext_resource type="PackedScene" uid="uid://by026ap30c328" path="res://Scenes/facas.tscn" id="2_j3if5"]
+[gd_scene load_steps=6 format=4 uid="uid://c4mj6hc5qmyea"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_emy7e"]
 resource_name = "aluminio"
@@ -86,9 +83,3 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00814819, -0.51178, -0.314453)
 shape = SubResource("BoxShape3D_a0j3b")
-
-[node name="Garfos" parent="." instance=ExtResource("1_rgu37")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.475368, 0.543893, -0.191803)
-
-[node name="Facas" parent="." instance=ExtResource("2_j3if5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.511643, 0.0365472, -0.468303)

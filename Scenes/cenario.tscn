@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ctgms144qf6b5"]
+[gd_scene load_steps=25 format=3 uid="uid://ctgms144qf6b5"]
 
 [ext_resource type="PackedScene" uid="uid://6ym8yahr6qly" path="res://Scenes/portao_preto.tscn" id="7_0t6qu"]
 [ext_resource type="PackedScene" uid="uid://ck02x3865dsvk" path="res://Scenes/Items/cartao_ru.tscn" id="10_fxj0t"]
@@ -16,9 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://c4mj6hc5qmyea" path="res://Scenes/porta_talheres.tscn" id="19_75ksg"]
 [ext_resource type="PackedScene" uid="uid://bog3tiigggsx6" path="res://Scenes/lavador_talher.tscn" id="20_bdx7y"]
 [ext_resource type="PackedScene" uid="uid://cv52ty4yu68tl" path="res://Scenes/mesa.tscn" id="21_i3x42"]
+[ext_resource type="PackedScene" uid="uid://by026ap30c328" path="res://Scenes/facas.tscn" id="22_dkwlr"]
 [ext_resource type="PackedScene" uid="uid://cusdqnvh5p8p7" path="res://Scenes/Levels/ru_3.tscn" id="22_ygs2p"]
 [ext_resource type="PackedScene" uid="uid://dmsw2cj1uiwfg" path="res://Scenes/pilastra.tscn" id="22_ymuy7"]
 [ext_resource type="PackedScene" uid="uid://swnn4tcswixh" path="res://Scenes/portao_saida.tscn" id="23_3ev3m"]
+[ext_resource type="PackedScene" uid="uid://bj1wi8eqt5srd" path="res://Scenes/garfos.tscn" id="23_kim7k"]
 [ext_resource type="PackedScene" uid="uid://dqxkvt3oi7hwv" path="res://Scenes/Items/lixeira_vermelha.tscn" id="23_rk3g4"]
 [ext_resource type="PackedScene" uid="uid://b04shang4qar6" path="res://Scenes/Items/papel_doce.tscn" id="25_oh2ec"]
 [ext_resource type="PackedScene" uid="uid://cuc0mkv03ukqv" path="res://Scenes/disciplinador.tscn" id="26_88w3x"]
@@ -191,5 +193,11 @@ transform = Transform3D(0.705389, 0, 0.70882, 0, 1, 0, -0.70882, 0, 0.705389, -3
 
 [node name="portaoPreto" parent="Objetos" instance=ExtResource("7_0t6qu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.9545, 0, -39.1439)
+
+[node name="Facas" parent="Objetos" instance=ExtResource("22_dkwlr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.758, 1.54733, -47.0449)
+
+[node name="Garfos" parent="Objetos" instance=ExtResource("23_kim7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.6559, 1.9526, -46.7965)
 
 [node name="ru3" parent="." instance=ExtResource("22_ygs2p")]

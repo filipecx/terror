@@ -1,4 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://by026ap30c328"]
+[gd_scene load_steps=8 format=4 uid="uid://by026ap30c328"]
+
+[ext_resource type="Script" path="res://Scenes/facas.gd" id="1_3t5sf"]
+[ext_resource type="Material" uid="uid://c8u512lfr61sc" path="res://Materials/interactable_highlights.tres" id="2_2ksl2"]
+[ext_resource type="AudioStream" uid="uid://dr441l6a7cugt" path="res://Assets/Sounds/talheres2.mp3" id="3_rqao3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7isf"]
 resource_name = "metal"
@@ -45,12 +49,25 @@ shadow_mesh = SubResource("ArrayMesh_ao7uy")
 radius = 0.0949836
 height = 0.532074
 
-[node name="Facas" type="StaticBody3D"]
+[node name="Facas" type="StaticBody3D" node_paths=PackedStringArray("item_highlight_mesh")]
+collision_layer = 5
+script = ExtResource("1_3t5sf")
+interact_text = "Pegar"
+item_highlight_mesh = NodePath("MeshInstance3D/Outline")
 
-[node name="mesh" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_4jwwq")
 skeleton = NodePath("")
+
+[node name="Outline" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1.165, 0, 0, 0, 1.165, 0, 0, 0, 1.165, 0, 0, 0)
+visible = false
+mesh = SubResource("ArrayMesh_4jwwq")
+surface_material_override/0 = ExtResource("2_2ksl2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.367053, 0.9302, 0, -0.9302, 0.367053, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_2bqwa")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_rqao3")

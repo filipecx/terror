@@ -10,6 +10,7 @@ extends CharacterBody3D
 @onready var inventory = $Inventory
 @onready var walkingSound = $AudioStreamPlayer3D
 
+
 signal interaction_prompt
 signal update_money
 signal update_credit

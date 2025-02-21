@@ -1,19 +1,21 @@
 extends InteractableObject
-class_name Bandejas1
+class_name Forks
 
 @onready var sound = $AudioStreamPlayer3D
-var bandeja_scene = preload("res://Scenes/bandeja.tscn")
+var garfo_scene = preload("res://Scenes/garfo.tscn")
+
+
 func _ready() -> void:
 	pass
 
 func interact(player: CharacterBody3D) -> void:
-	var bandeja = bandeja_scene.instantiate()
-	player.add_child(bandeja)
-	var distancia = 1.0
+	var garfo = garfo_scene.instantiate()
+	player.add_child(garfo)
+	var distancia = 0.6
 	var frente = player.camera.global_transform.basis.z.normalized()
 	var posicao = player.camera.global_transform.origin - (frente * distancia)
-	
-	posicao.y -= 0.4
-	bandeja.global_transform.origin = posicao
+	posicao.x -= 0.5
+	posicao.y -= 0.5
+	garfo.global_transform.origin = posicao
 	sound.play()
 	print("Interagiu")

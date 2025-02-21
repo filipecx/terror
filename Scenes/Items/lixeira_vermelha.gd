@@ -19,4 +19,3 @@ func interact(player: CharacterBody3D) -> void:
 			print("No reward item set for the trash")
 	else:
 		print("Player does not have the required item")
-

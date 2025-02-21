@@ -47,7 +47,7 @@ size = Vector3(0.0808563, 0.00323486, 0.595703)
 [node name="Faca" type="StaticBody3D"]
 
 [node name="mesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000957966, -0.000374887, 0.000536978)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_3p17o")
 skeleton = NodePath("")
 

@@ -1,4 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://dw1yww7ujatp8"]
+[gd_scene load_steps=9 format=4 uid="uid://dw1yww7ujatp8"]
+
+[ext_resource type="Script" path="res://Scenes/pilhas_bandeja_1.gd" id="1_l6r1y"]
+[ext_resource type="Material" uid="uid://c8u512lfr61sc" path="res://Materials/interactable_highlights.tres" id="2_uh78r"]
+[ext_resource type="AudioStream" uid="uid://dqrv671j2boq2" path="res://Assets/Sounds/plastico.wav" id="3_wbwki"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0bplv"]
 resource_name = "azul"
@@ -46,11 +50,20 @@ size = Vector3(1.2735, 1.05859, 0.914612)
 [sub_resource type="BoxOccluder3D" id="BoxOccluder3D_rfqdn"]
 size = Vector3(1.24822, 1.05113, 0.872812)
 
-[node name="Pilhas_bandeja1" type="StaticBody3D"]
+[node name="Pilhas_bandeja1" type="StaticBody3D" node_paths=PackedStringArray("item_highlight_mesh")]
+collision_layer = 5
+script = ExtResource("1_l6r1y")
+item_highlight_mesh = NodePath("MeshInstance3D/Outline")
 
-[node name="mesh" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_t84l2")
 skeleton = NodePath("")
+
+[node name="Outline" type="MeshInstance3D" parent="MeshInstance3D"]
+visible = false
+mesh = SubResource("ArrayMesh_t84l2")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("2_uh78r")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00595093, 0.00292969, -0.000152588)
@@ -58,3 +71,6 @@ shape = SubResource("BoxShape3D_cecbb")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 occluder = SubResource("BoxOccluder3D_rfqdn")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_wbwki")
