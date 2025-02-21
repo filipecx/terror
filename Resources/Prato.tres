@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://doovn4b2v3d3s"]
+
+[ext_resource type="Script" path="res://Scenes/Systems/Inventory/item_data.gd" id="1_6047r"]
+
+[resource]
+script = ExtResource("1_6047r")
+item_name = "Prato"
+description = "Usado para por comida"
+category = 1
+stackable = false
+max_stack = 1
+scene_path = ""

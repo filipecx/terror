@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://c71gjsjkmrmfs"]
+
+[ext_resource type="Script" path="res://Scenes/Systems/Inventory/item_data.gd" id="1_1dpkc"]
+
+[resource]
+script = ExtResource("1_1dpkc")
+item_name = "Bandeja"
+description = "É usada para por o prato e talheres em cima"
+category = 1
+stackable = false
+max_stack = 1
+scene_path = ""

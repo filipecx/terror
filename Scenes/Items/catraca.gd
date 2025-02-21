@@ -56,7 +56,6 @@ func on_body_exited(body: Node3D) -> void:
 # Triggered when a body enters the tresspass zone
 func on_tresspass_entered(body: Node3D) -> void:
 	$AudioStreamPlayer3D.play()
-	pass
 
 # Triggered when a body exits the tresspass jump zone
 func on_tresspass_exited(body: Node3D) -> void:
