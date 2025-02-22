@@ -30,6 +30,7 @@ movie_writer/disable_vsync=true
 [global_group]
 
 Player=""
+Enemy=""
 
 [input]
 

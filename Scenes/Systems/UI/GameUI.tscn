@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://q8gbxcqshxnf"]
+[gd_scene load_steps=5 format=3 uid="uid://q8gbxcqshxnf"]
 
 [ext_resource type="Script" path="res://Scenes/Systems/UI/hud.gd" id="1_bfadr"]
 [ext_resource type="Texture2D" uid="uid://dnpd0fmnlyap2" path="res://Assets/crosshair-neon-circle.png" id="2_lgiys"]
+[ext_resource type="Script" path="res://Scenes/Systems/UI/feedback-label.gd" id="3_woy5i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ojnlh"]
+font_color = Color(0.800491, 0.800491, 0.800491, 1)
 
 [node name="GameUi" type="Control"]
 layout_mode = 3
@@ -84,3 +88,35 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 22
 horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 561.5
+offset_top = 719.5
+offset_right = 601.5
+offset_bottom = 759.5
+script = ExtResource("3_woy5i")
+
+[node name="Timer" type="Timer" parent="CanvasLayer/Control"]
+wait_time = 2.0
+one_shot = true
+
+[node name="FeedbackLabel" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5375
+anchor_top = -10.175
+anchor_right = 2.5625
+anchor_bottom = -10.175
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 22
+label_settings = SubResource("LabelSettings_ojnlh")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]

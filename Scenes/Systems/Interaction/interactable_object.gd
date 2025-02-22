@@ -6,6 +6,8 @@ class_name InteractableObject
 @export var interact_text: String = "use"
 @export var item_highlight_mesh: MeshInstance3D
 @export var item_data: ItemData = null
+@export var feedback_ui: FeedbackUI = null
+@export var bad_interaction: String = "For some reason you can't"
 
 signal interacted(interactor)
 
@@ -24,5 +26,13 @@ func get_interact_text() -> String:
 
 func interact(player: CharacterBody3D) -> void:
 	if is_interactable:
-		print("Interacted with:", item_data.item_name)
+		on_success_interaction()
 		interacted.emit(player)
+
+func on_failed_interaction() -> void:
+	if feedback_ui:
+		feedback_ui.show_message(bad_interaction)
+
+func on_success_interaction() -> void:
+	if feedback_ui:
+		feedback_ui.show_message("You've got " + item_data.item_name)

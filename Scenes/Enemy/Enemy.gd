@@ -1,13 +1,13 @@
 extends CharacterBody3D
 
 # Variables to customize enemy behavior
-@export var speed: float = 5.0          # Movement speed
-@export var follow_range: float = 20.0  # Distance within which the enemy starts following
-@export var stop_range: float = 2.0     # Distance at which the enemy stops moving
-@export var rotation_speed: float = 5.0 # How quickly the enemy rotates towards the player
+@export var speed: float = 5.0
+@export var acceleration: float = 10.0  # Smoother movement
+@export var friction: float = 5.0  # Deceleration when stopping
+@export var follow_range: float = 20.0
+@export var stop_range: float = 2.0
+@export var rotation_speed: float = 5.0
 
-# Reference to the player node
-#@export var player_path:
 var player: CharacterBody3D
 
 func _ready():
@@ -15,8 +15,20 @@ func _ready():
 
 
 func _physics_process(delta: float):
-	if player and is_instance_valid(player):
-		follow_player(delta)
+	pass
+	# if player and is_instance_valid(player):
+	# 	follow_player(delta)
+
+func move(direction: Vector3, speed_multiplier: float):
+	if direction.length() > 0:
+		# Accelerate in the given direction
+		velocity = velocity.lerp(direction * speed * speed_multiplier, acceleration * get_physics_process_delta_time())
+	else:
+		# Apply friction when stopping
+		velocity = velocity.lerp(Vector3.ZERO, friction * get_physics_process_delta_time())
+
+	# Apply movement using Godot's physics engine
+	move_and_slide()
 
 func follow_player(delta: float):
 	# Calculate direction to the player
@@ -39,3 +51,8 @@ func follow_player(delta: float):
 
 	# Apply movement using CharacterBody3D's move_and_slide
 	move_and_slide()
+
+func check_for_self(node):
+	if node == self:
+		return true
+	return false

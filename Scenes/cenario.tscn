@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://by026ap30c328" path="res://Scenes/Items/facas.tscn" id="22_dkwlr"]
 [ext_resource type="PackedScene" uid="uid://cusdqnvh5p8p7" path="res://Scenes/Levels/ru_3.tscn" id="22_ygs2p"]
 [ext_resource type="PackedScene" uid="uid://dmsw2cj1uiwfg" path="res://Scenes/pilastra.tscn" id="22_ymuy7"]
-[ext_resource type="PackedScene" uid="uid://swnn4tcswixh" path="res://Scenes/portao_saida.tscn" id="23_3ev3m"]
+[ext_resource type="PackedScene" uid="uid://swnn4tcswixh" path="res://Scenes/Items/portao_saida.tscn" id="23_3ev3m"]
 [ext_resource type="PackedScene" uid="uid://bj1wi8eqt5srd" path="res://Scenes/Items/garfos.tscn" id="23_kim7k"]
 [ext_resource type="PackedScene" uid="uid://dqxkvt3oi7hwv" path="res://Scenes/Items/lixeira_vermelha.tscn" id="23_rk3g4"]
 [ext_resource type="PackedScene" uid="uid://b04shang4qar6" path="res://Scenes/Items/papel_doce.tscn" id="25_oh2ec"]

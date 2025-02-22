@@ -1,18 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://b008cj3fl7yrj"]
+[gd_scene load_steps=6 format=3 uid="uid://b008cj3fl7yrj"]
 
 [ext_resource type="Script" path="res://Scenes/Enemy/Enemy.gd" id="1_2iwy8"]
 [ext_resource type="PackedScene" uid="uid://cl1y5tkby78yk" path="res://Models/low_snail.glb" id="1_717hi"]
+[ext_resource type="BehaviorTree" uid="uid://day4a0gv16fk6" path="res://ai/trees/Enemy.tres" id="3_nvv8i"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_m7mv8"]
-radius = 1.34517
+[sub_resource type="BoxShape3D" id="BoxShape3D_fw336"]
+size = Vector3(0.526367, 1.20728, 1.13977)
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_6es7v"]
 
 [node name="Lesma" type="CharacterBody3D"]
-transform = Transform3D(-0.0142764, 0, -0.999898, 0, 1, 0, 0.999898, 0, -0.0142764, 0, 0, 0)
+transform = Transform3D(-0.00285528, 0, -0.19998, 0, 0.2, 0, 0.19998, 0, -0.00285528, 0, 0, 0)
 script = ExtResource("1_2iwy8")
 
 [node name="low_snail" parent="." instance=ExtResource("1_717hi")]
 transform = Transform3D(-0.999956, 0, -0.0094421, 0, 1, 0, 0.0094421, 0, -0.999956, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 9.31323e-10, 0, 1, 0, -9.31323e-10, 0, 1, 0.00995129, 1.15666, 0.504898)
-shape = SubResource("SphereShape3D_m7mv8")
+transform = Transform3D(2.99938, -0.0428267, -0.0432846, 0.0428313, -0.0318901, 2.99952, -0.0432802, -2.99953, -0.0312721, -0.0468707, 1.76967, -0.084696)
+shape = SubResource("BoxShape3D_fw336")
+
+[node name="BTPlayer" type="BTPlayer" parent="." groups=["Enemy"]]
+behavior_tree = ExtResource("3_nvv8i")
+blackboard_plan = SubResource("BlackboardPlan_6es7v")

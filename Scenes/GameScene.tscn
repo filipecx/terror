@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://do0tgvqi2bp8x"]
 
 [ext_resource type="PackedScene" uid="uid://bh0em578t2qe4" path="res://Scenes/Systems/GameManager/GameManager.tscn" id="1_cfgmv"]
-[ext_resource type="PackedScene" uid="uid://b008cj3fl7yrj" path="res://Scenes/lesma.tscn" id="1_igjpg"]
+[ext_resource type="PackedScene" uid="uid://b008cj3fl7yrj" path="res://Scenes/Enemy/Enemy.tscn" id="1_igjpg"]
 [ext_resource type="PackedScene" uid="uid://ctgms144qf6b5" path="res://Scenes/cenario.tscn" id="2_kivs8"]
 [ext_resource type="Script" path="res://Scenes/Systems/Objective/objective_manager.gd" id="3_fbdks"]
 [ext_resource type="PackedScene" uid="uid://q8gbxcqshxnf" path="res://Scenes/Systems/UI/GameUI.tscn" id="4_7gm6e"]
@@ -36,9 +36,13 @@ script = ExtResource("3_fbdks")
 [node name="Player" parent="GameManager" instance=ExtResource("5_4hxdw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.331888, 1.05586, -21.4884)
 
-[node name="Lesma" parent="GameManager" instance=ExtResource("1_igjpg")]
+[node name="Lesma" parent="GameManager" groups=["Enemy"] instance=ExtResource("1_igjpg")]
+transform = Transform3D(-0.00285528, 0, -0.19998, 0, 0.2, 0, 0.19998, 0, -0.00285528, 0, 0.680029, -43.4349)
 
 [node name="Cenario" parent="GameManager" instance=ExtResource("2_kivs8")]
+
+[node name="Portao_saida" parent="GameManager/Cenario/Objetos" index="48" node_paths=PackedStringArray("feedback_ui")]
+feedback_ui = NodePath("../../../GameUi/CanvasLayer/Control")
 
 [node name="Cedula2" parent="GameManager/Cenario" instance=ExtResource("5_aislc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26885, 0.607799, -38.2395)
@@ -53,3 +57,6 @@ money = 1.5
 stream = ExtResource("8_ispq8")
 volume_db = 6.095
 autoplay = true
+
+[editable path="GameManager/Cenario"]
+[editable path="GameManager/GameUi"]
