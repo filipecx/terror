@@ -77,7 +77,7 @@ script = ExtResource("1_4x657")
 interact_text = "open"
 item_highlight_mesh = NodePath("mesh/Outline")
 item_data = SubResource("Resource_g1mo8")
-bad_interaction = "You need 3 keys to unlock this "
+bad_interaction = "Você precisa de 3 Chaves para abrir"
 
 [node name="mesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_gh8du")

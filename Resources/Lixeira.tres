@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://cat1u5bacsae0"]
+
+[ext_resource type="Script" path="res://Scenes/Systems/Inventory/item_data.gd" id="1_87g7o"]
+
+[resource]
+script = ExtResource("1_87g7o")
+item_name = "Lixiera"
+description = "Para jogar plástico fora"
+category = 1
+stackable = false
+max_stack = 1
+scene_path = ""

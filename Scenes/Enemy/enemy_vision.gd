@@ -16,7 +16,6 @@ func is_player_visible():
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
 		player = body
-		print("Player entered")
 
 		# Not working yet
 		# if ray.is_colliding():

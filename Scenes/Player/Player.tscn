@@ -17,6 +17,7 @@ font_size = 14
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 collision_layer = 2
+collision_mask = 17
 wall_min_slide_angle = 0.443314
 floor_block_on_wall = false
 script = ExtResource("1_8fkih")

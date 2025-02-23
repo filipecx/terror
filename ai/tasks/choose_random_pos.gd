@@ -13,7 +13,6 @@ func _tick(_delta: float) -> Status:
 	pos = rando_pos(dir)
 	blackboard.set_var(position_var, pos)
 
-	print(dir, "   ", pos, "   agent pos: ", agent.global_position.x)
 	return SUCCESS
 
 func rando_pos(dir):

@@ -28,7 +28,6 @@ func on_successful_interaction() -> void:
 
 func close_door() -> void:
 	# Calculate the target position for the door
-	print("Closing the door")
 	var target_position = door_mesh.transform.origin + Vector3(0, 0, -move_distance)
 
 	# Create a new Transform3D with the updated position

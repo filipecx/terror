@@ -22,7 +22,7 @@ func reset_highlight() -> void:
 	item_highlight_mesh.visible = false
 
 func get_interact_text() -> String:
-	return "Press to " + interact_text;
+	return "Clique para " + interact_text;
 
 func interact(player: CharacterBody3D) -> void:
 	if is_interactable:
@@ -35,4 +35,5 @@ func on_failed_interaction() -> void:
 
 func on_success_interaction() -> void:
 	if feedback_ui:
-		feedback_ui.show_message("You've got " + item_data.item_name)
+		if should_consume:
+			feedback_ui.show_message("You've got " + item_data.item_name)

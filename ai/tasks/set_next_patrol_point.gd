@@ -11,8 +11,6 @@ func _setup():
 	if not navigation_agent:
 		return FAILURE
 	patrol_points = agent.get_node("PatrolPoints").get_children()
-	for p in patrol_points:
-		print (" - ", p.global_position, " - ")
 
 
 func _tick(_delta: float) -> Status:
@@ -26,8 +24,6 @@ func _tick(_delta: float) -> Status:
 
 		var target_position = patrol_points[current_index].global_position
 		navigation_agent.set_target_position(target_position)
-		print(current_index)
-		print("target_position: ",  target_position)
 		return SUCCESS
 	else:
 		return FAILURE

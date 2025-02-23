@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://dqxkvt3oi7hwv"]
+[gd_scene load_steps=12 format=4 uid="uid://dqxkvt3oi7hwv"]
 
 [ext_resource type="Script" path="res://Scenes/Items/lixeira_vermelha.gd" id="1_ofyci"]
 [ext_resource type="Resource" uid="uid://ccqsoj2s5wr6m" path="res://Resources/Goiabada.tres" id="2_cuepe"]
 [ext_resource type="Resource" uid="uid://br0sya0mvjflf" path="res://Resources/key.tres" id="3_f8ko6"]
 [ext_resource type="Material" uid="uid://c8u512lfr61sc" path="res://Materials/interactable_highlights.tres" id="4_00ohn"]
+[ext_resource type="Script" path="res://Scenes/Systems/Interaction/rewarded_interaction.gd" id="5_f4guw"]
+[ext_resource type="Script" path="res://Scenes/Systems/Inventory/item_data.gd" id="6_6s830"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8rx1v"]
 resource_name = "vernelho"
@@ -66,8 +68,10 @@ collision_layer = 5
 script = ExtResource("1_ofyci")
 requested_item = ExtResource("2_cuepe")
 reward_item = ExtResource("3_f8ko6")
+should_consume = false
 interact_text = "throw"
 item_highlight_mesh = NodePath("MeshInstance3D/Outline")
+bad_interaction = "Você pode jogar alguma coisa fora aqui"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_w50un")
@@ -81,3 +85,8 @@ surface_material_override/0 = ExtResource("4_00ohn")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00259399, 0.029541, 0.00378418)
 shape = SubResource("BoxShape3D_jxc2b")
+
+[node name="RewardedInteraction" type="Node" parent="."]
+script = ExtResource("5_f4guw")
+requested_items = Array[ExtResource("6_6s830")]([ExtResource("2_cuepe")])
+reward_items = Array[ExtResource("6_6s830")]([ExtResource("3_f8ko6")])

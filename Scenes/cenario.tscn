@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ctgms144qf6b5"]
+[gd_scene load_steps=27 format=3 uid="uid://ctgms144qf6b5"]
 
 [ext_resource type="PackedScene" uid="uid://6ym8yahr6qly" path="res://Scenes/portao_preto.tscn" id="7_0t6qu"]
 [ext_resource type="PackedScene" uid="uid://ck02x3865dsvk" path="res://Scenes/Items/cartao_ru.tscn" id="10_fxj0t"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://swnn4tcswixh" path="res://Scenes/Items/portao_saida.tscn" id="23_3ev3m"]
 [ext_resource type="PackedScene" uid="uid://bj1wi8eqt5srd" path="res://Scenes/Items/garfos.tscn" id="23_kim7k"]
 [ext_resource type="PackedScene" uid="uid://dqxkvt3oi7hwv" path="res://Scenes/Items/lixeira_vermelha.tscn" id="23_rk3g4"]
+[ext_resource type="PackedScene" uid="uid://dago76jvapfps" path="res://Scenes/Systems/TriggerAreas/win_area.tscn" id="24_a7m4w"]
 [ext_resource type="PackedScene" uid="uid://b04shang4qar6" path="res://Scenes/Items/papel_doce.tscn" id="25_oh2ec"]
 [ext_resource type="PackedScene" uid="uid://cuc0mkv03ukqv" path="res://Scenes/disciplinador.tscn" id="26_88w3x"]
 
@@ -217,6 +218,9 @@ interact_text = "use"
 [node name="Garfos" parent="NavigationRegion3D/Objetos" instance=ExtResource("23_kim7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.6559, 1.9526, -46.7965)
 interact_text = "use"
+
+[node name="WinArea" parent="NavigationRegion3D/Objetos" instance=ExtResource("24_a7m4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26596, 1.722, -12.5999)
 
 [node name="ru3" parent="NavigationRegion3D" instance=ExtResource("22_ygs2p")]
 

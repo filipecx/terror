@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://do0tgvqi2bp8x"]
+[gd_scene load_steps=14 format=3 uid="uid://do0tgvqi2bp8x"]
 
 [ext_resource type="PackedScene" uid="uid://bh0em578t2qe4" path="res://Scenes/Systems/GameManager/GameManager.tscn" id="1_cfgmv"]
 [ext_resource type="PackedScene" uid="uid://ctgms144qf6b5" path="res://Scenes/cenario.tscn" id="2_kivs8"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://b008cj3fl7yrj" path="res://Scenes/lesma.tscn" id="4_ja3vm"]
 [ext_resource type="PackedScene" uid="uid://cjsd88a31ypvn" path="res://Scenes/Player/Player.tscn" id="5_4hxdw"]
 [ext_resource type="PackedScene" uid="uid://djxdr83qbicpb" path="res://Scenes/Items/cedula.tscn" id="5_aislc"]
+[ext_resource type="Resource" uid="uid://cat1u5bacsae0" path="res://Resources/Lixeira.tres" id="6_ipl8b"]
 [ext_resource type="AudioStream" uid="uid://enehc4eucyrq" path="res://Assets/Sounds/ambiente.mp3" id="8_ispq8"]
+[ext_resource type="PackedScene" uid="uid://cy35nan6j4v0g" path="res://Scenes/Systems/Menus/win_menu.tscn" id="10_kiwpy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x3rv7"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -65,6 +67,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0963, 0, -50.8083)
 should_consume = false
 feedback_ui = NodePath("../../../../GameUi/CanvasLayer/Control")
 
+[node name="Lixeira_vermelha" parent="GameManager/Cenario/NavigationRegion3D/Objetos" index="49" node_paths=PackedStringArray("feedback_ui")]
+interact_text = "jogar fora"
+item_data = ExtResource("6_ipl8b")
+feedback_ui = NodePath("../../../../GameUi/CanvasLayer/Control")
+
+[node name="WinArea" parent="GameManager/Cenario/NavigationRegion3D/Objetos" index="57"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26596, 1.28066, -28.2547)
+win_menu = NodePath("../../../../WinGame")
+player = NodePath("../../../../Player")
+
 [node name="Cedula2" parent="GameManager/Cenario" instance=ExtResource("5_aislc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26885, 0.607799, -38.2395)
 
@@ -73,11 +85,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2219, 1.8493, -20.1688)
 money = 1.5
 
 [node name="GameUi" parent="GameManager" instance=ExtResource("4_7gm6e")]
+z_index = 1
+
+[node name="WinGame" parent="GameManager" instance=ExtResource("10_kiwpy")]
+
+[node name="CanvasLayer" parent="GameManager/WinGame" index="0"]
+visible = false
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("8_ispq8")
 volume_db = 6.095
 autoplay = true
 
+[connection signal="button_down" from="GameManager/WinGame/CanvasLayer/Panel/Quit" to="GameManager/Cenario/NavigationRegion3D/Objetos/WinArea" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="GameManager/WinGame/CanvasLayer/Panel/Quit" to="GameManager/Cenario/NavigationRegion3D/Objetos/WinArea" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="GameManager/WinGame/CanvasLayer/Panel/Restart" to="GameManager/Cenario/NavigationRegion3D/Objetos/WinArea" method="_on_restart_button_pressed"]
+
 [editable path="GameManager/Cenario"]
-[editable path="GameManager/GameUi"]
+[editable path="GameManager/WinGame"]

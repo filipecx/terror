@@ -8,14 +8,6 @@ class_name Trash
 func _ready() -> void:
 	pass
 
-func interact(player: CharacterBody3D) -> void:
-	if not is_interactable:
-		return
+func on_failed_interaction() -> void:
+	super()
 
-	if player.has_item(requested_item):
-		if reward_item:
-			player.add_to_inventory(reward_item)
-		else:
-			print("No reward item set for the trash")
-	else:
-		print("Player does not have the required item")
