@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=1200
 window/size/viewport_height=800
-window/size/initial_position_type=2
 window/size/borderless=true
 window/vsync/vsync_mode=0
 
@@ -81,6 +80,7 @@ crouch={
 3d_physics/layer_1="environment"
 3d_physics/layer_2="player"
 3d_physics/layer_3="interactables"
+3d_physics/layer_4="enemies"
 
 [rendering]
 

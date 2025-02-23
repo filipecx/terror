@@ -1,71 +1,38 @@
-[gd_resource type="BehaviorTree" load_steps=20 format=3 uid="uid://day4a0gv16fk6"]
+[gd_resource type="BehaviorTree" load_steps=13 format=3 uid="uid://day4a0gv16fk6"]
 
-[ext_resource type="Script" path="res://ai/tasks/choose_random_pos.gd" id="1_jkx7l"]
-[ext_resource type="Script" path="res://ai/tasks/move_to_position.gd" id="2_nb1xe"]
-[ext_resource type="Script" path="res://ai/tasks/find_target.gd" id="3_6smo6"]
-[ext_resource type="Script" path="res://ai/tasks/move_to_target.gd" id="4_ynd8p"]
+[ext_resource type="Script" path="res://ai/tasks/set_next_patrol_point.gd" id="1_aj5ij"]
+[ext_resource type="Script" path="res://ai/tasks/conditions/can_see_player.gd" id="1_luo75"]
+[ext_resource type="Script" path="res://ai/tasks/move_to_patrol_point.gd" id="2_88ec8"]
+[ext_resource type="Script" path="res://ai/tasks/chase_player.gd" id="2_y3bsu"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_ffhwh"]
 
-[sub_resource type="BTConsolePrint" id="BTConsolePrint_jfthl"]
-text = "Random Move"
+[sub_resource type="BTCondition" id="BTCondition_5toso"]
+script = ExtResource("1_luo75")
 
-[sub_resource type="BTAction" id="BTAction_ucbhq"]
-script = ExtResource("1_jkx7l")
-range_min_in_dir = 10.0
-range_max_in_dir = 30.0
-position_var = &"pos"
-dir_var = &"dir"
+[sub_resource type="BTAction" id="BTAction_ufj6a"]
+script = ExtResource("2_y3bsu")
+chase_speed = 7.0
 
-[sub_resource type="BTAction" id="BTAction_5ge8m"]
-script = ExtResource("2_nb1xe")
-target_pos_var = &"pos"
-dir_var = &"dir"
-speed_var = 1
-tolerance = 10
+[sub_resource type="BTSequence" id="BTSequence_0wm7e"]
+custom_name = "Sequence - Chase"
+children = [SubResource("BTCondition_5toso"), SubResource("BTAction_ufj6a")]
 
-[sub_resource type="BTRandomWait" id="BTRandomWait_xpcpr"]
-max_duration = 4.0
+[sub_resource type="BTAction" id="BTAction_435kx"]
+script = ExtResource("1_aj5ij")
+current_point_index_var = &"current_point_index"
+patrol_points_var = &"patrol_points"
 
-[sub_resource type="BTSequence" id="BTSequence_1qnwe"]
-custom_name = "Idle Sequence"
-children = [SubResource("BTRandomWait_xpcpr")]
+[sub_resource type="BTAction" id="BTAction_dpw3v"]
+script = ExtResource("2_88ec8")
 
-[sub_resource type="BTSequence" id="BTSequence_jx8kf"]
-custom_name = "Random Move Sequence"
-children = [SubResource("BTConsolePrint_jfthl"), SubResource("BTAction_ucbhq"), SubResource("BTAction_5ge8m"), SubResource("BTSequence_1qnwe")]
+[sub_resource type="BTSequence" id="BTSequence_ld1iv"]
+custom_name = "Sequence - Patrol"
+children = [SubResource("BTAction_435kx"), SubResource("BTAction_dpw3v")]
 
-[sub_resource type="BTProbability" id="BTProbability_bv55a"]
-children = [SubResource("BTSequence_jx8kf")]
-
-[sub_resource type="BTAction" id="BTAction_04kqg"]
-script = ExtResource("3_6smo6")
-group = &"Player"
-target_var = &"target"
-
-[sub_resource type="BTConsolePrint" id="BTConsolePrint_fu6mf"]
-text = "Move to Target"
-
-[sub_resource type="BTAction" id="BTAction_ir238"]
-script = ExtResource("4_ynd8p")
-target_var = &"target"
-speed_var = 60
-tolerance = 20
-
-[sub_resource type="BTWait" id="BTWait_75qiu"]
-duration = 5.0
-
-[sub_resource type="BTSequence" id="BTSequence_l0lg3"]
-custom_name = "Move To Target Sequence"
-children = [SubResource("BTAction_04kqg"), SubResource("BTConsolePrint_fu6mf"), SubResource("BTAction_ir238"), SubResource("BTWait_75qiu")]
-
-[sub_resource type="BTProbability" id="BTProbability_2etgw"]
-run_chance = 1.0
-children = [SubResource("BTSequence_l0lg3")]
-
-[sub_resource type="BTSelector" id="BTSelector_xxn4c"]
-children = [SubResource("BTProbability_bv55a"), SubResource("BTProbability_2etgw")]
+[sub_resource type="BTSelector" id="BTSelector_28exl"]
+children = [SubResource("BTSequence_0wm7e"), SubResource("BTSequence_ld1iv")]
 
 [resource]
 blackboard_plan = SubResource("BlackboardPlan_ffhwh")
-root_task = SubResource("BTSelector_xxn4c")
+root_task = SubResource("BTSelector_28exl")
