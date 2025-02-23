@@ -84,6 +84,7 @@ mesh = SubResource("ArrayMesh_gh8du")
 skeleton = NodePath("")
 
 [node name="Outline" type="MeshInstance3D" parent="mesh"]
+visible = false
 mesh = SubResource("ArrayMesh_5goar")
 surface_material_override/0 = ExtResource("2_8jb5e")
 

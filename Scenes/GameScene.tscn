@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://do0tgvqi2bp8x"]
 
 [ext_resource type="PackedScene" uid="uid://bh0em578t2qe4" path="res://Scenes/Systems/GameManager/GameManager.tscn" id="1_cfgmv"]
-[ext_resource type="PackedScene" uid="uid://b008cj3fl7yrj" path="res://Scenes/Enemy/Enemy.tscn" id="1_igjpg"]
 [ext_resource type="PackedScene" uid="uid://ctgms144qf6b5" path="res://Scenes/cenario.tscn" id="2_kivs8"]
 [ext_resource type="Script" path="res://Scenes/Systems/Objective/objective_manager.gd" id="3_fbdks"]
 [ext_resource type="PackedScene" uid="uid://q8gbxcqshxnf" path="res://Scenes/Systems/UI/GameUI.tscn" id="4_7gm6e"]
+[ext_resource type="PackedScene" uid="uid://b008cj3fl7yrj" path="res://Scenes/lesma.tscn" id="4_ja3vm"]
 [ext_resource type="PackedScene" uid="uid://cjsd88a31ypvn" path="res://Scenes/Player/Player.tscn" id="5_4hxdw"]
 [ext_resource type="PackedScene" uid="uid://djxdr83qbicpb" path="res://Scenes/Items/cedula.tscn" id="5_aislc"]
 [ext_resource type="AudioStream" uid="uid://enehc4eucyrq" path="res://Assets/Sounds/ambiente.mp3" id="8_ispq8"]
@@ -36,13 +36,33 @@ script = ExtResource("3_fbdks")
 [node name="Player" parent="GameManager" instance=ExtResource("5_4hxdw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.331888, 1.05586, -21.4884)
 
-[node name="Lesma" parent="GameManager" groups=["Enemy"] instance=ExtResource("1_igjpg")]
-transform = Transform3D(-0.00285528, 0, -0.19998, 0, 0.2, 0, 0.19998, 0, -0.00285528, 0, 0.680029, -43.4349)
+[node name="Lesma" parent="GameManager" groups=["Enemy"] instance=ExtResource("4_ja3vm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.622398, -47.8368)
+
+[node name="PatrolPoints" type="Node" parent="GameManager/Lesma"]
+
+[node name="PT1" type="Node3D" parent="GameManager/Lesma/PatrolPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.367131, 0, -48.4515)
+
+[node name="PT2" type="Node3D" parent="GameManager/Lesma/PatrolPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5047, 0, -52.4806)
+
+[node name="PT3" type="Node3D" parent="GameManager/Lesma/PatrolPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.41958, 0, -46.68)
+
+[node name="PT4" type="Node3D" parent="GameManager/Lesma/PatrolPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.898484, 0, -45.8071)
+
+[node name="PT5" type="Node3D" parent="GameManager/Lesma/PatrolPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0963, 0, -36.623)
+
+[node name="PT6" type="Node3D" parent="GameManager/Lesma/PatrolPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0963, 0, -50.8083)
 
 [node name="Cenario" parent="GameManager" instance=ExtResource("2_kivs8")]
 
-[node name="Portao_saida" parent="GameManager/Cenario/Objetos" index="48" node_paths=PackedStringArray("feedback_ui")]
-feedback_ui = NodePath("../../../GameUi/CanvasLayer/Control")
+[node name="Portao_saida" parent="GameManager/Cenario/NavigationRegion3D/Objetos" index="48" node_paths=PackedStringArray("feedback_ui")]
+feedback_ui = NodePath("../../../../GameUi/CanvasLayer/Control")
 
 [node name="Cedula2" parent="GameManager/Cenario" instance=ExtResource("5_aislc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26885, 0.607799, -38.2395)

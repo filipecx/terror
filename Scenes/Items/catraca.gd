@@ -15,8 +15,8 @@ func _ready() -> void:
 		collision_shape.disabled = false
 
 	# Connect signals for Area3D
-	no_jump_zone.body_entered.connect(on_body_entered)
-	no_jump_zone.body_exited.connect(on_body_exited)
+	# no_jump_zone.body_entered.connect(on_body_entered)
+	# no_jump_zone.body_exited.connect(on_body_exited)
 
 	tresspass_zone.body_entered.connect(on_tresspass_entered)
 	tresspass_zone.body_exited.connect(on_tresspass_exited)
