@@ -62,6 +62,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0963, 0, -50.8083)
 [node name="Cenario" parent="GameManager" instance=ExtResource("2_kivs8")]
 
 [node name="Portao_saida" parent="GameManager/Cenario/NavigationRegion3D/Objetos" index="48" node_paths=PackedStringArray("feedback_ui")]
+should_consume = false
 feedback_ui = NodePath("../../../../GameUi/CanvasLayer/Control")
 
 [node name="Cedula2" parent="GameManager/Cenario" instance=ExtResource("5_aislc")]

@@ -94,4 +94,4 @@ shape = SubResource("BoxShape3D_aewh2")
 
 [node name="RewardedInteraction" type="Node" parent="."]
 script = ExtResource("4_ujjp6")
-requested_items = Array[ExtResource("2_jd0m6")]([ExtResource("5_0io67"), ExtResource("5_0io67"), ExtResource("5_0io67")])
+requested_items = Array[ExtResource("2_jd0m6")]([ExtResource("5_0io67")])

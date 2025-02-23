@@ -7,7 +7,6 @@ extends InteractableObject
 
 func open_door() -> void:
 	# Calculate the target position for the door
-	print("Opening the door")
 	var target_position = door_mesh.transform.origin + Vector3(move_distance, 0, 0 )
 
 	# Create a new Transform3D with the updated position
@@ -23,6 +22,9 @@ func open_door() -> void:
 
 func on_failed_interaction() -> void:
 	super()
+
+func on_successful_interaction() -> void:
+	open_door()
 
 func close_door() -> void:
 	# Calculate the target position for the door
