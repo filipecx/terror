@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ctgms144qf6b5" path="res://Scenes/cenario.tscn" id="2_kivs8"]
 [ext_resource type="Script" path="res://Scenes/Systems/Objective/objective_manager.gd" id="3_fbdks"]
 [ext_resource type="PackedScene" uid="uid://q8gbxcqshxnf" path="res://Scenes/Systems/UI/GameUI.tscn" id="4_7gm6e"]
-[ext_resource type="PackedScene" uid="uid://b008cj3fl7yrj" path="res://Scenes/lesma.tscn" id="4_ja3vm"]
+[ext_resource type="PackedScene" uid="uid://b008cj3fl7yrj" path="res://Scenes/Enemy/Enemy.tscn" id="4_2827i"]
 [ext_resource type="PackedScene" uid="uid://cjsd88a31ypvn" path="res://Scenes/Player/Player.tscn" id="5_4hxdw"]
 [ext_resource type="PackedScene" uid="uid://djxdr83qbicpb" path="res://Scenes/Items/cedula.tscn" id="5_aislc"]
 [ext_resource type="Resource" uid="uid://cat1u5bacsae0" path="res://Resources/Lixeira.tres" id="6_ipl8b"]
@@ -38,28 +38,25 @@ script = ExtResource("3_fbdks")
 [node name="Player" parent="GameManager" instance=ExtResource("5_4hxdw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.331888, 1.05586, -21.4884)
 
-[node name="Lesma" parent="GameManager" groups=["Enemy"] instance=ExtResource("4_ja3vm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.622398, -47.8368)
+[node name="Lesma" parent="GameManager" groups=["Enemy"] instance=ExtResource("4_2827i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.753025, -44.8681)
 
 [node name="PatrolPoints" type="Node" parent="GameManager/Lesma"]
 
 [node name="PT1" type="Node3D" parent="GameManager/Lesma/PatrolPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.367131, 0, -48.4515)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50342, -42.33)
 
 [node name="PT2" type="Node3D" parent="GameManager/Lesma/PatrolPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5047, 0, -52.4806)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -51.1095)
 
 [node name="PT3" type="Node3D" parent="GameManager/Lesma/PatrolPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.41958, 0, -46.68)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9198, 0, -51.2543)
 
 [node name="PT4" type="Node3D" parent="GameManager/Lesma/PatrolPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.898484, 0, -45.8071)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.049, 0, -44.0676)
 
 [node name="PT5" type="Node3D" parent="GameManager/Lesma/PatrolPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0963, 0, -36.623)
-
-[node name="PT6" type="Node3D" parent="GameManager/Lesma/PatrolPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0963, 0, -50.8083)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3237, 0, -47.3179)
 
 [node name="Cenario" parent="GameManager" instance=ExtResource("2_kivs8")]
 
@@ -73,7 +70,6 @@ item_data = ExtResource("6_ipl8b")
 feedback_ui = NodePath("../../../../GameUi/CanvasLayer/Control")
 
 [node name="WinArea" parent="GameManager/Cenario/NavigationRegion3D/Objetos" index="57"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26596, 1.28066, -28.2547)
 win_menu = NodePath("../../../../WinGame")
 player = NodePath("../../../../Player")
 
