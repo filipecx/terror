@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://c1m0itrbm637n"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c1m0itrbm637n"]
 
 [ext_resource type="Script" path="res://Scenes/Systems/Inventory/item_data.gd" id="1_auw6b"]
+[ext_resource type="Texture2D" uid="uid://b8qywfr6hju5s" path="res://Assets/icons/faca.png" id="1_ha573"]
 
 [resource]
 script = ExtResource("1_auw6b")
@@ -9,4 +10,5 @@ description = "Usada para cortar a comida"
 category = 1
 stackable = false
 max_stack = 1
+icon = ExtResource("1_ha573")
 scene_path = ""

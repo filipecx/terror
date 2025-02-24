@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://btqu6rdnjahrh"]
+
+[ext_resource type="Script" path="res://Scenes/Systems/Inventory/item_data.gd" id="1_211mi"]
+
+[resource]
+script = ExtResource("1_211mi")
+item_name = "Pratos Sujos"
+description = "O que sobrou após um ótimo almoço"
+category = 1
+stackable = true
+max_stack = 1
+scene_path = ""

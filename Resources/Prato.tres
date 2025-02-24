@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://doovn4b2v3d3s"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://doovn4b2v3d3s"]
 
+[ext_resource type="Texture2D" uid="uid://y4mtpwdpbtcd" path="res://Assets/icons/prato.png" id="1_7i4xb"]
 [ext_resource type="Script" path="res://Scenes/Systems/Inventory/item_data.gd" id="1_6047r"]
 
 [resource]
@@ -9,4 +10,5 @@ description = "Usado para por comida"
 category = 1
 stackable = false
 max_stack = 1
+icon = ExtResource("1_7i4xb")
 scene_path = ""

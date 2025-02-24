@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://c71gjsjkmrmfs"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c71gjsjkmrmfs"]
 
 [ext_resource type="Script" path="res://Scenes/Systems/Inventory/item_data.gd" id="1_1dpkc"]
+[ext_resource type="Texture2D" uid="uid://n7200w42at51" path="res://Assets/icons/bandeja.png" id="1_ou2lw"]
 
 [resource]
 script = ExtResource("1_1dpkc")
@@ -9,4 +10,5 @@ description = "É usada para por o prato e talheres em cima"
 category = 1
 stackable = false
 max_stack = 1
+icon = ExtResource("1_ou2lw")
 scene_path = ""

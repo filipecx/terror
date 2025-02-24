@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://des7gfcnkjwcq"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://des7gfcnkjwcq"]
 
+[ext_resource type="Texture2D" uid="uid://cq5o6sajc8kt5" path="res://Assets/icons/garfo.png" id="1_4xvtm"]
 [ext_resource type="Script" path="res://Scenes/Systems/Inventory/item_data.gd" id="1_l6u8a"]
 
 [resource]
@@ -9,4 +10,5 @@ description = "Usado para comer"
 category = 1
 stackable = false
 max_stack = 1
+icon = ExtResource("1_4xvtm")
 scene_path = ""
