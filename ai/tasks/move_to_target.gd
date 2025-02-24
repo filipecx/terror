@@ -23,4 +23,3 @@ func _tick(_delta: float) -> Status:
 		# _rotate_agent(dir)
 		agent.move(dir, speed_var)
 		return RUNNING
-
