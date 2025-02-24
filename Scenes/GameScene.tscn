@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ctgms144qf6b5" path="res://Scenes/cenario.tscn" id="2_kivs8"]
 [ext_resource type="Script" path="res://Scenes/Systems/Objective/objective_manager.gd" id="3_fbdks"]
 [ext_resource type="PackedScene" uid="uid://q8gbxcqshxnf" path="res://Scenes/Systems/UI/GameUI.tscn" id="4_7gm6e"]
-[ext_resource type="PackedScene" uid="uid://b008cj3fl7yrj" path="res://Scenes/lesma.tscn" id="4_2827i"]
+[ext_resource type="PackedScene" uid="uid://b008cj3fl7yrj" path="res://Scenes/Enemy/Enemy.tscn" id="4_gis4l"]
 [ext_resource type="PackedScene" uid="uid://cjsd88a31ypvn" path="res://Scenes/Player/Player.tscn" id="5_4hxdw"]
 [ext_resource type="PackedScene" uid="uid://djxdr83qbicpb" path="res://Scenes/Items/cedula.tscn" id="5_aislc"]
 [ext_resource type="Resource" uid="uid://cat1u5bacsae0" path="res://Resources/Lixeira.tres" id="6_ipl8b"]
@@ -38,8 +38,8 @@ script = ExtResource("3_fbdks")
 [node name="Player" parent="GameManager" instance=ExtResource("5_4hxdw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.331888, 1.05586, -21.4884)
 
-[node name="Lesma" parent="GameManager" groups=["Enemy"] instance=ExtResource("4_2827i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.753025, -44.8681)
+[node name="Lesma" parent="GameManager" groups=["Enemy"] instance=ExtResource("4_gis4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.857533, -46.9105)
 
 [node name="PatrolPoints" type="Node" parent="GameManager/Lesma"]
 
@@ -58,11 +58,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.049, 0, -44.0676)
 [node name="PT5" type="Node3D" parent="GameManager/Lesma/PatrolPoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3237, 0, -47.3179)
 
+[node name="Lesma2" parent="GameManager" groups=["Enemy"] instance=ExtResource("4_gis4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.7819, 0.857533, -31.1703)
+
+[node name="PatrolPoints" type="Node" parent="GameManager/Lesma2"]
+
+[node name="PT1" type="Node3D" parent="GameManager/Lesma2/PatrolPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.1271, 0.50342, -31.0188)
+
+[node name="PT2" type="Node3D" parent="GameManager/Lesma2/PatrolPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.1271, 0.50342, -43.1606)
+
+[node name="PT3" type="Node3D" parent="GameManager/Lesma2/PatrolPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94.2816, 0.50342, -43.1606)
+
+[node name="PT4" type="Node3D" parent="GameManager/Lesma2/PatrolPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -106.117, 0.50342, -43.1606)
+
+[node name="PT5" type="Node3D" parent="GameManager/Lesma2/PatrolPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.061, 0.50342, -30.8802)
+
 [node name="Cenario" parent="GameManager" instance=ExtResource("2_kivs8")]
 
 [node name="Maquinas_credito" parent="GameManager/Cenario/NavigationRegion3D/Objetos" index="2" node_paths=PackedStringArray("feedback_ui")]
+interact_text = "colocar crédito"
 feedback_ui = NodePath("../../../../GameUi/CanvasLayer/Control")
-bad_interaction = "Você precisa de dinheiro para por créditos"
+bad_interaction = "Você precisa de dinheiro ou cartão para por créditos"
 
 [node name="Catraca" parent="GameManager/Cenario/NavigationRegion3D/Objetos" index="3" node_paths=PackedStringArray("feedback_ui")]
 feedback_ui = NodePath("../../../../GameUi/CanvasLayer/Control")

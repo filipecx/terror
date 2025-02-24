@@ -9,6 +9,8 @@ func _setup():
 	if not navigation_agent:
 		return FAILURE
 
+func _enter():
+	agent.state_machine.get_active_state().dispatch("to_patrol")
 
 func _tick(delta: float) -> Status:
 	if navigation_agent.is_navigation_finished():

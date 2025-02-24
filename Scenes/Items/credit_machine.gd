@@ -9,6 +9,6 @@ func interact(player):
 			player.subtract_money(tax)
 			player.add_credit()
 		else:
-			print("Not enough money")
+			on_failed_interaction()
 	else:
-		print("Player does not have the required item")
+		on_failed_interaction()

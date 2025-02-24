@@ -7,6 +7,9 @@ func _setup():
 	if not navigation_agent:
 		return FAILURE
 
+func _enter() -> void:
+	agent.state_machine.get_active_state().dispatch("to_chase")
+
 func _tick(delta: float) -> Status:
 	var vision_area = agent.get_node("VisionArea")
 	if not vision_area or not vision_area.player:

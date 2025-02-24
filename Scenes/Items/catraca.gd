@@ -38,8 +38,7 @@ func interact(player: CharacterBody3D) -> void:
 
 		# Optional: Play a sound or animation for feedback
 	else:
-		print("Not enough credits to use the ratchet: ", required_credits)
-		print("Player credit", player.credit)
+		on_failed_interaction()
 
 # Triggered when a body enters the no jump zone
 func on_body_entered(body: Node3D) -> void:

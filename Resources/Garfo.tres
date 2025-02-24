@@ -1,7 +1,11 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://des7gfcnkjwcq"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://des7gfcnkjwcq"]
 
 [ext_resource type="Texture2D" uid="uid://cq5o6sajc8kt5" path="res://Assets/icons/garfo.png" id="1_4xvtm"]
 [ext_resource type="Script" path="res://Scenes/Systems/Inventory/item_data.gd" id="1_l6u8a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7m1cv"]
+atlas = ExtResource("1_4xvtm")
+region = Rect2(625, 250, 700, 700)
 
 [resource]
 script = ExtResource("1_l6u8a")
@@ -10,5 +14,6 @@ description = "Usado para comer"
 category = 1
 stackable = false
 max_stack = 1
-icon = ExtResource("1_4xvtm")
+quantity = 1
+icon = SubResource("AtlasTexture_7m1cv")
 scene_path = ""

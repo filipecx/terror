@@ -1,4 +1,4 @@
-[gd_resource type="BehaviorTree" load_steps=16 format=3 uid="uid://day4a0gv16fk6"]
+[gd_resource type="BehaviorTree" load_steps=21 format=3 uid="uid://day4a0gv16fk6"]
 
 [ext_resource type="Script" path="res://ai/tasks/set_next_patrol_point.gd" id="1_aj5ij"]
 [ext_resource type="Script" path="res://ai/tasks/conditions/can_see_player.gd" id="1_luo75"]
@@ -35,7 +35,26 @@ script = ExtResource("2_88ec8")
 custom_name = "Sequence - Patrol"
 children = [SubResource("BTAction_435kx"), SubResource("BTAction_dpw3v")]
 
+[sub_resource type="BTAlwaysFail" id="BTAlwaysFail_vo3ab"]
+
+[sub_resource type="BBNode" id="BBNode_hpvuo"]
+saved_value = NodePath("AnimationPlayer")
+resource_name = "AnimationPlayer"
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_qr285"]
+animation_player = SubResource("BBNode_hpvuo")
+animation_name = &"Running"
+
+[sub_resource type="BBNode" id="BBNode_517dp"]
+saved_value = NodePath("AnimationPlayer")
+resource_name = "AnimationPlayer"
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_awuny"]
+animation_player = SubResource("BBNode_517dp")
+animation_name = &"Attack_001"
+
 [sub_resource type="BTAction" id="BTAction_da37q"]
+children = [SubResource("BTAlwaysFail_vo3ab"), SubResource("BTPlayAnimation_qr285"), SubResource("BTPlayAnimation_awuny")]
 script = ExtResource("6_fbc6l")
 
 [sub_resource type="BTSequence" id="BTSequence_csqto"]
