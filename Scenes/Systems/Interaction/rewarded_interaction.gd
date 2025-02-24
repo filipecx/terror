@@ -30,7 +30,7 @@ func _on_interacted(interactor):
 
 func _grant_reward(interactor):
 	for item in requested_items:
-		interactor.remove_from_inventory(item)
+		interactor.remove_from_inventory(item, item["quantity"])
 
 	for item in reward_items:
 		interactor.add_to_inventory(item)

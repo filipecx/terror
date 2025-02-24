@@ -1,6 +1,11 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://btqu6rdnjahrh"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://btqu6rdnjahrh"]
 
 [ext_resource type="Script" path="res://Scenes/Systems/Inventory/item_data.gd" id="1_211mi"]
+[ext_resource type="Texture2D" uid="uid://bbjqsiy4pi8qg" path="res://Assets/icons/tudoSujo.png" id="1_u7bnn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o346v"]
+atlas = ExtResource("1_u7bnn")
+region = Rect2(415, 0, 1000, 1000)
 
 [resource]
 script = ExtResource("1_211mi")
@@ -9,4 +14,6 @@ description = "O que sobrou após um ótimo almoço"
 category = 1
 stackable = true
 max_stack = 1
+quantity = 1
+icon = SubResource("AtlasTexture_o346v")
 scene_path = ""

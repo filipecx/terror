@@ -1,18 +1,23 @@
-[gd_resource type="BehaviorTree" load_steps=13 format=3 uid="uid://day4a0gv16fk6"]
+[gd_resource type="BehaviorTree" load_steps=16 format=3 uid="uid://day4a0gv16fk6"]
 
 [ext_resource type="Script" path="res://ai/tasks/set_next_patrol_point.gd" id="1_aj5ij"]
 [ext_resource type="Script" path="res://ai/tasks/conditions/can_see_player.gd" id="1_luo75"]
 [ext_resource type="Script" path="res://ai/tasks/move_to_patrol_point.gd" id="2_88ec8"]
 [ext_resource type="Script" path="res://ai/tasks/chase_player.gd" id="2_y3bsu"]
+[ext_resource type="Script" path="res://ai/tasks/teleport_to_patrol_point.gd" id="6_fbc6l"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_ffhwh"]
+var/current_point_index/name = &"current_point_index"
+var/current_point_index/type = 2
+var/current_point_index/value = 0
+var/current_point_index/hint = 0
+var/current_point_index/hint_string = ""
 
 [sub_resource type="BTCondition" id="BTCondition_5toso"]
 script = ExtResource("1_luo75")
 
 [sub_resource type="BTAction" id="BTAction_ufj6a"]
 script = ExtResource("2_y3bsu")
-chase_speed = 7.0
 
 [sub_resource type="BTSequence" id="BTSequence_0wm7e"]
 custom_name = "Sequence - Chase"
@@ -30,8 +35,15 @@ script = ExtResource("2_88ec8")
 custom_name = "Sequence - Patrol"
 children = [SubResource("BTAction_435kx"), SubResource("BTAction_dpw3v")]
 
+[sub_resource type="BTAction" id="BTAction_da37q"]
+script = ExtResource("6_fbc6l")
+
+[sub_resource type="BTSequence" id="BTSequence_csqto"]
+custom_name = "Sequence - Stuck"
+children = [SubResource("BTAction_da37q")]
+
 [sub_resource type="BTSelector" id="BTSelector_28exl"]
-children = [SubResource("BTSequence_0wm7e"), SubResource("BTSequence_ld1iv")]
+children = [SubResource("BTSequence_0wm7e"), SubResource("BTSequence_ld1iv"), SubResource("BTSequence_csqto")]
 
 [resource]
 blackboard_plan = SubResource("BlackboardPlan_ffhwh")

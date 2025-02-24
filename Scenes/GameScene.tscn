@@ -60,6 +60,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3237, 0, -47.3179)
 
 [node name="Cenario" parent="GameManager" instance=ExtResource("2_kivs8")]
 
+[node name="Maquinas_credito" parent="GameManager/Cenario/NavigationRegion3D/Objetos" index="2" node_paths=PackedStringArray("feedback_ui")]
+feedback_ui = NodePath("../../../../GameUi/CanvasLayer/Control")
+bad_interaction = "Você precisa de dinheiro para por créditos"
+
+[node name="Catraca" parent="GameManager/Cenario/NavigationRegion3D/Objetos" index="3" node_paths=PackedStringArray("feedback_ui")]
+feedback_ui = NodePath("../../../../GameUi/CanvasLayer/Control")
+bad_interaction = "Sem crédito no cartão você não vai passar."
+
+[node name="Local_comida" parent="GameManager/Cenario/NavigationRegion3D/Objetos" index="12" node_paths=PackedStringArray("feedback_ui")]
+interact_text = "pegar a comida"
+feedback_ui = NodePath("../../../../GameUi/CanvasLayer/Control")
+bad_interaction = "Você precisa de todos os itens necessários para se alimentar, de forma educada"
+
+[node name="Lavador_talher" parent="GameManager/Cenario/NavigationRegion3D/Objetos" index="14" node_paths=PackedStringArray("feedback_ui")]
+feedback_ui = NodePath("../../../../GameUi/CanvasLayer/Control")
+
+[node name="Mesa" parent="GameManager/Cenario/NavigationRegion3D/Objetos" index="15" node_paths=PackedStringArray("feedback_ui")]
+feedback_ui = NodePath("../../../../GameUi/CanvasLayer/Control")
+
 [node name="Portao_saida" parent="GameManager/Cenario/NavigationRegion3D/Objetos" index="48" node_paths=PackedStringArray("feedback_ui")]
 should_consume = false
 feedback_ui = NodePath("../../../../GameUi/CanvasLayer/Control")
@@ -98,4 +117,5 @@ autoplay = true
 [connection signal="pressed" from="GameManager/WinGame/CanvasLayer/Panel/Restart" to="GameManager/Cenario/NavigationRegion3D/Objetos/WinArea" method="_on_restart_button_pressed"]
 
 [editable path="GameManager/Cenario"]
+[editable path="GameManager/GameUi"]
 [editable path="GameManager/WinGame"]

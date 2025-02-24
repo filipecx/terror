@@ -224,5 +224,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26596, 1.722, -12.5999)
 
 [node name="ru3" parent="NavigationRegion3D" instance=ExtResource("22_ygs2p")]
 
-[connection signal="door_open_signal" from="NavigationRegion3D/Objetos/Catraca" to="NavigationRegion3D/Objetos/Porta_dentro" method="open_door"]
 [connection signal="door_open_signal" from="NavigationRegion3D/Objetos/Catraca" to="NavigationRegion3D/Objetos/Porta_dentro" method="_on_catraca_door_open_signal"]
+[connection signal="door_open_signal" from="NavigationRegion3D/Objetos/Catraca" to="NavigationRegion3D/Objetos/Porta_dentro" method="open_door"]

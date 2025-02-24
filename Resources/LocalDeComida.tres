@@ -10,5 +10,6 @@ description = "Onde a comida é servida"
 category = 1
 stackable = false
 max_stack = 1
+quantity = 1
 icon = ExtResource("1_yu428")
 scene_path = ""

@@ -1,7 +1,5 @@
 extends BTAction
 
-@export var chase_speed: float = 7.0
-
 var navigation_agent: NavigationAgent3D
 
 func _setup():
@@ -22,7 +20,7 @@ func _tick(delta: float) -> Status:
 		var direction = (next_position - agent.global_position).normalized()
 
 		# Apply movement
-		agent.velocity = direction * chase_speed
+		agent.velocity = direction * agent.speed
 		agent.move_and_slide()
 		agent._rotate_towards(direction, delta)
 
