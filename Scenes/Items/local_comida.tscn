@@ -1,24 +1,15 @@
-[gd_scene load_steps=17 format=4 uid="uid://bwkmkfwp5v5xy"]
+[gd_scene load_steps=16 format=4 uid="uid://bwkmkfwp5v5xy"]
 
 [ext_resource type="PackedScene" uid="uid://irq7jm3v2ty" path="res://Scenes/comida_na_gondola.tscn" id="1_buyvh"]
 [ext_resource type="Script" path="res://Scenes/Systems/Interaction/interactable_object.gd" id="1_f4pac"]
 [ext_resource type="Material" uid="uid://c8u512lfr61sc" path="res://Materials/interactable_highlights.tres" id="2_f3pfs"]
 [ext_resource type="Script" path="res://Scenes/Systems/Inventory/item_data.gd" id="2_g25p6"]
+[ext_resource type="Resource" uid="uid://c6aj2nm8fxhxt" path="res://Resources/LocalDeComida.tres" id="2_ku0ww"]
 [ext_resource type="Script" path="res://Scenes/Systems/Interaction/rewarded_interaction.gd" id="5_v0f7o"]
 [ext_resource type="Resource" uid="uid://des7gfcnkjwcq" path="res://Resources/Garfo.tres" id="6_usg7p"]
 [ext_resource type="Resource" uid="uid://c1m0itrbm637n" path="res://Resources/Faca.tres" id="7_sleps"]
 [ext_resource type="Resource" uid="uid://doovn4b2v3d3s" path="res://Resources/Prato.tres" id="8_vjt76"]
 [ext_resource type="Resource" uid="uid://c71gjsjkmrmfs" path="res://Resources/Bandeja.tres" id="9_8fr1y"]
-[ext_resource type="Resource" uid="uid://b6ctddardg683" path="res://Resources/Comida.tres" id="10_jjdir"]
-
-[sub_resource type="Resource" id="Resource_rtfkk"]
-script = ExtResource("2_g25p6")
-item_name = "Balcão de Comida"
-description = "Onde a comida é servida"
-category = 1
-stackable = false
-max_stack = 1
-scene_path = ""
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hlt3e"]
 resource_name = "aluminio"
@@ -83,7 +74,7 @@ script = ExtResource("1_f4pac")
 should_consume = false
 interact_text = "pick food"
 item_highlight_mesh = NodePath("MeshInstance3D/Outline")
-item_data = SubResource("Resource_rtfkk")
+item_data = ExtResource("2_ku0ww")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_v58vj")
@@ -104,4 +95,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.506094, 0.168262, 0.0703831
 [node name="RewardedInteraction" type="Node3D" parent="."]
 script = ExtResource("5_v0f7o")
 requested_items = Array[ExtResource("2_g25p6")]([ExtResource("6_usg7p"), ExtResource("7_sleps"), ExtResource("8_vjt76"), ExtResource("9_8fr1y")])
-reward_items = Array[ExtResource("2_g25p6")]([ExtResource("10_jjdir")])
+reward_items = Array[ExtResource("2_g25p6")]([ExtResource("2_ku0ww")])

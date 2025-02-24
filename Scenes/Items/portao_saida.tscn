@@ -13,6 +13,7 @@ description = "Por onde você foge para se salvar"
 category = 1
 stackable = false
 max_stack = 1
+quantity = 1
 scene_path = ""
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rthi4"]

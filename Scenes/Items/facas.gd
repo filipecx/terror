@@ -10,9 +10,11 @@ func interact(player: CharacterBody3D) -> void:
 	super(player)
 	var faca = faca_scene.instantiate()
 	player.add_child(faca)
+	faca.name = "faca"
+	is_interactable = false
 	var distancia = 1.4
-	var frente = player.camera.global_transform.basis.z.normalized()
-	var posicao = player.camera.global_transform.origin - (frente * distancia)
+	var frente = player.global_transform.basis.z.normalized()
+	var posicao = player.global_transform.origin - (frente * distancia)
 	posicao.x += 0.5
 	posicao.y -= 0.15
 	faca.global_transform.origin = posicao

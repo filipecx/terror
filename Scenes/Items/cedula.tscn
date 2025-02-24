@@ -12,6 +12,7 @@ description = "A note"
 category = 1
 stackable = true
 max_stack = 99
+quantity = 1
 scene_path = ""
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2t2h0"]
@@ -74,7 +75,7 @@ size = Vector3(0.735474, 0.0238647, 0.340576)
 collision_layer = 5
 script = ExtResource("1_au452")
 money = 1.0
-interact_text = "get richier"
+interact_text = "catar o dinheiro"
 item_highlight_mesh = NodePath("MeshInstance3D/Outline")
 item_data = SubResource("Resource_e8i8t")
 
