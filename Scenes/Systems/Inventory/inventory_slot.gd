@@ -10,6 +10,5 @@ func set_item(item_data: ItemData, quantity: int):
 		quantity_label.text = str(quantity)
 
 func set_empty():
-	pass
-	# icon_texture.texture = null
-	# quantity_label.text = ""
+	$Icon.texture = null  # Remove the image
+	$Label.text = ""   # Remove the quantity text

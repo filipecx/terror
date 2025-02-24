@@ -35,7 +35,8 @@ func remove_item(item_data: ItemData, quantity: int = 1) -> bool:
 			slot["quantity"] -= quantity
 			if slot["quantity"] <= 0:
 				slots.erase(slot)  # Remove slot if quantity reaches zero
-				return true
+			update_slots_ui()
+			return true
 	return false  # Item not found
 
 func get_item(item_data: ItemData) -> Dictionary:
@@ -44,8 +45,16 @@ func get_item(item_data: ItemData) -> Dictionary:
 			return slot
 	return {}
 
+func get_item_with_quantity(item_data: ItemData) -> Dictionary:
+	for slot in slots:
+		var data = slot["item_data"]
+		var quantity = slot["quantity"]
+		if data == item_data and quantity == item_data.quantity:
+			return slot
+	return {}
+
 func has_item(item_data: ItemData) -> bool:
-	return get_item(item_data) != {}
+	return get_item_with_quantity(item_data) != {}
 
 # Get all slots
 func get_slots() -> Array:
@@ -68,7 +77,10 @@ func update_slots_ui() -> void:
 		var slot_instance = slots_ui.get_node("Slot_%d" % i)
 		if i < slots.size():
 			var slot_data = slots[i]
-			slot_instance.set_item(slot_data["item_data"], slot_data["quantity"])
+			if slot_data["item_data"] != null:
+				slot_instance.set_item(slot_data["item_data"], slot_data["quantity"])
+			else:
+				slot_instance.set_empty()
 		else:
 			slot_instance.set_empty()
 
