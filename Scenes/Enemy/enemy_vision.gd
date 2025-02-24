@@ -16,6 +16,7 @@ func is_player_visible():
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
 		player = body
+		player.get_hitted(self.get_parent())
 
 		# Not working yet
 		# if ray.is_colliding():
@@ -24,4 +25,5 @@ func _on_body_entered(body):
 
 func _on_body_exited(body):
 	if body == player:
+		player.get_safe()
 		player = null

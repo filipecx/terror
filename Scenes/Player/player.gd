@@ -14,6 +14,8 @@ extends CharacterBody3D
 signal interaction_prompt
 signal update_money
 signal update_credit
+signal slime_hit(speed_multiplier: float)
+signal safe
 
 const SPEED = 5.0
 const CROUCH_SPEED = 2.0
@@ -85,9 +87,13 @@ func handle_interaction():
 		if hit_object and hit_object != last_object_on_aim:
 			reset_highlights()  # Reset the previous object's highlight
 			if hit_object.has_method("highlight"):
-				hit_object.highlight()
+				if hit_object.is_interactable:
+					hit_object.highlight()
 			if hit_object.has_method("get_interact_text"):
-				emit_signal("interaction_prompt", hit_object.get_interact_text())
+				if hit_object.is_interactable:
+					emit_signal("interaction_prompt", hit_object.get_interact_text())
+			else:
+				emit_signal("interaction_prompt", "")
 			last_object_on_aim = hit_object
 		if Input.is_action_just_pressed("interact") and hit_object.has_method("interact"):
 			hit_object.interact(self)
@@ -97,8 +103,9 @@ func handle_interaction():
 
 func reset_highlights():
 	if last_object_on_aim and is_instance_valid(last_object_on_aim):
-		last_object_on_aim.reset_highlight()
-		last_object_on_aim = null
+		if last_object_on_aim.has_method("highlight"):
+			last_object_on_aim.reset_highlight()
+			last_object_on_aim = null
 
 func add_to_inventory(item_data: ItemData, quantity: int = 1) -> bool:
 	if inventory:
@@ -143,3 +150,9 @@ func has_items(item_data: Array[ItemData]) -> bool:
 				return false
 		return true
 	return false
+
+func get_hitted(enemy: Enemy):
+	emit_signal("slime_hit", enemy.time_multiplier)
+
+func get_safe():
+	emit_signal("safe")

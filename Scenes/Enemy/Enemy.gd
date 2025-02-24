@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name Enemy
 
 # Variables to customize enemy behavior
 @export var speed: float = 2.0
@@ -7,12 +8,14 @@ extends CharacterBody3D
 @export var follow_range: float = 20.0
 @export var stop_range: float = 2.0
 @export var rotation_speed: float = 5.0
+@export var time_multiplier: float = 10.0
 @export var behavior_tree: BTPlayer
 
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var patrol_points: Node = $PatrolPoints
 
 var player: CharacterBody3D
+
 
 func _ready():
 	player = get_tree().get_first_node_in_group("Player")
