@@ -14,5 +14,6 @@ description = "A card to enter R.U food area"
 category = 0
 stackable = false
 max_stack = 1
+quantity = 1
 icon = SubResource("AtlasTexture_cfx5r")
 scene_path = ""

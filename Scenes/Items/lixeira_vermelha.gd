@@ -10,4 +10,3 @@ func _ready() -> void:
 
 func on_failed_interaction() -> void:
 	super()
-

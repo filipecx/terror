@@ -13,5 +13,6 @@ description = "Melhor goiabada da cidade"
 category = 1
 stackable = true
 max_stack = 99
+quantity = 1
 icon = SubResource("AtlasTexture_lkxfr")
 scene_path = ""

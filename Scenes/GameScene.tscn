@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ctgms144qf6b5" path="res://Scenes/cenario.tscn" id="2_kivs8"]
 [ext_resource type="Script" path="res://Scenes/Systems/Objective/objective_manager.gd" id="3_fbdks"]
 [ext_resource type="PackedScene" uid="uid://q8gbxcqshxnf" path="res://Scenes/Systems/UI/GameUI.tscn" id="4_7gm6e"]
-[ext_resource type="PackedScene" uid="uid://b008cj3fl7yrj" path="res://Scenes/Enemy/Enemy.tscn" id="4_2827i"]
+[ext_resource type="PackedScene" uid="uid://b008cj3fl7yrj" path="res://Scenes/lesma.tscn" id="4_2827i"]
 [ext_resource type="PackedScene" uid="uid://cjsd88a31ypvn" path="res://Scenes/Player/Player.tscn" id="5_4hxdw"]
 [ext_resource type="PackedScene" uid="uid://djxdr83qbicpb" path="res://Scenes/Items/cedula.tscn" id="5_aislc"]
 [ext_resource type="Resource" uid="uid://cat1u5bacsae0" path="res://Resources/Lixeira.tres" id="6_ipl8b"]
