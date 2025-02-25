@@ -3,7 +3,7 @@ class_name RewardedInteraction
 
 @export var requested_items: Array[ItemData] = []
 @export var reward_items: Array[ItemData] = []
-
+@onready var sound_player = $"../AudioStreamPlayer3D"
 func _ready():
 	var parent = get_parent()
 	if parent is InteractableObject:
@@ -19,9 +19,13 @@ func _execute_successful_action():
 	var parent = get_parent()
 	if parent and parent.has_method("on_successful_interaction"):
 		parent.on_successful_interaction()
+		
+
 
 func _on_interacted(interactor):
 	if interactor.inventory and interactor.has_items(requested_items):
+		if (sound_player):
+			sound_player.play()
 		_grant_reward(interactor)
 		_execute_successful_action()
 	else:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dqxkvt3oi7hwv"]
+[gd_scene load_steps=13 format=4 uid="uid://dqxkvt3oi7hwv"]
 
 [ext_resource type="Script" path="res://Scenes/Items/lixeira_vermelha.gd" id="1_ofyci"]
 [ext_resource type="Resource" uid="uid://ccqsoj2s5wr6m" path="res://Resources/Goiabada.tres" id="2_cuepe"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://c8u512lfr61sc" path="res://Materials/interactable_highlights.tres" id="4_00ohn"]
 [ext_resource type="Script" path="res://Scenes/Systems/Interaction/rewarded_interaction.gd" id="5_f4guw"]
 [ext_resource type="Script" path="res://Scenes/Systems/Inventory/item_data.gd" id="6_6s830"]
+[ext_resource type="AudioStream" uid="uid://0qo3lxhep7w4" path="res://Assets/Sounds/plasticBag.mp3" id="7_d5tap"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8rx1v"]
 resource_name = "vernelho"
@@ -90,3 +91,6 @@ shape = SubResource("BoxShape3D_jxc2b")
 script = ExtResource("5_f4guw")
 requested_items = Array[ExtResource("6_6s830")]([ExtResource("2_cuepe")])
 reward_items = Array[ExtResource("6_6s830")]([ExtResource("3_f8ko6")])
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_d5tap")

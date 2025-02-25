@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://bog3tiigggsx6"]
+[gd_scene load_steps=16 format=4 uid="uid://bog3tiigggsx6"]
 
 [ext_resource type="Script" path="res://Scenes/Systems/Interaction/interactable_object.gd" id="1_srtsa"]
 [ext_resource type="Texture2D" uid="uid://bvelia678w82y" path="res://Models/lavar_talheres_comida.png" id="1_wprdb"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://c8u512lfr61sc" path="res://Materials/interactable_highlights.tres" id="4_q6gw7"]
 [ext_resource type="Script" path="res://Scenes/Systems/Interaction/rewarded_interaction.gd" id="5_8wpir"]
 [ext_resource type="Resource" uid="uid://btqu6rdnjahrh" path="res://Resources/RestoDeComida.tres" id="6_buvcy"]
+[ext_resource type="AudioStream" uid="uid://cebycb53u433q" path="res://Assets/Sounds/talheragua.wav" id="8_mfwn0"]
 [ext_resource type="Resource" uid="uid://br0sya0mvjflf" path="res://Resources/key.tres" id="10_fj8s0"]
 
 [sub_resource type="Resource" id="Resource_v7k78"]
@@ -130,3 +131,6 @@ shape = SubResource("BoxShape3D_krug0")
 script = ExtResource("5_8wpir")
 requested_items = Array[ExtResource("2_of7cr")]([ExtResource("6_buvcy")])
 reward_items = Array[ExtResource("2_of7cr")]([ExtResource("10_fj8s0")])
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("8_mfwn0")

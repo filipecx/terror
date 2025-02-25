@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cv52ty4yu68tl"]
+[gd_scene load_steps=18 format=4 uid="uid://cv52ty4yu68tl"]
 
 [ext_resource type="Script" path="res://Scenes/Systems/Interaction/interactable_object.gd" id="1_yijy1"]
 [ext_resource type="Script" path="res://Scenes/Systems/Inventory/item_data.gd" id="2_oc510"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://c6aj2nm8fxhxt" path="res://Resources/LocalDeComida.tres" id="4_kkloj"]
 [ext_resource type="Resource" uid="uid://btqu6rdnjahrh" path="res://Resources/RestoDeComida.tres" id="5_5po41"]
 [ext_resource type="Resource" uid="uid://br0sya0mvjflf" path="res://Resources/key.tres" id="7_dxeu3"]
+[ext_resource type="AudioStream" uid="uid://ch112ed4redij" path="res://Assets/Sounds/eating.wav" id="8_b52vd"]
 
 [sub_resource type="Resource" id="Resource_5byco"]
 script = ExtResource("2_oc510")
@@ -144,3 +145,8 @@ occluder = SubResource("BoxOccluder3D_q1qvx")
 script = ExtResource("3_bjric")
 requested_items = Array[ExtResource("2_oc510")]([ExtResource("4_kkloj")])
 reward_items = Array[ExtResource("2_oc510")]([ExtResource("5_5po41"), ExtResource("7_dxeu3")])
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("8_b52vd")
+volume_db = 19.884
+stream_paused = true

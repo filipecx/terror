@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://bwkmkfwp5v5xy"]
+[gd_scene load_steps=17 format=4 uid="uid://bwkmkfwp5v5xy"]
 
 [ext_resource type="PackedScene" uid="uid://irq7jm3v2ty" path="res://Scenes/comida_na_gondola.tscn" id="1_buyvh"]
 [ext_resource type="Script" path="res://Scenes/Systems/Interaction/interactable_object.gd" id="1_f4pac"]
@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://c1m0itrbm637n" path="res://Resources/Faca.tres" id="7_sleps"]
 [ext_resource type="Resource" uid="uid://doovn4b2v3d3s" path="res://Resources/Prato.tres" id="8_vjt76"]
 [ext_resource type="Resource" uid="uid://c71gjsjkmrmfs" path="res://Resources/Bandeja.tres" id="9_8fr1y"]
+[ext_resource type="AudioStream" uid="uid://bywvljyujeabo" path="res://Assets/Sounds/comida.wav" id="11_krtxe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hlt3e"]
 resource_name = "aluminio"
@@ -96,3 +97,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.506094, 0.168262, 0.0703831
 script = ExtResource("5_v0f7o")
 requested_items = Array[ExtResource("2_g25p6")]([ExtResource("6_usg7p"), ExtResource("7_sleps"), ExtResource("8_vjt76"), ExtResource("9_8fr1y")])
 reward_items = Array[ExtResource("2_g25p6")]([ExtResource("2_ku0ww")])
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("11_krtxe")

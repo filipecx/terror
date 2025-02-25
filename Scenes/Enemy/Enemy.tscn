@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://b008cj3fl7yrj"]
+[gd_scene load_steps=20 format=4 uid="uid://b008cj3fl7yrj"]
 
 [ext_resource type="Script" path="res://Scenes/Enemy/Enemy.gd" id="1_2iwy8"]
 [ext_resource type="BehaviorTree" uid="uid://day4a0gv16fk6" path="res://ai/trees/Enemy.tres" id="3_nvv8i"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scenes/Enemy/States/idle.gd" id="5_dm0qa"]
 [ext_resource type="Script" path="res://Scenes/Enemy/States/patrolling.gd" id="6_ruj6q"]
 [ext_resource type="Script" path="res://Scenes/Enemy/States/chasing.gd" id="7_5jkjj"]
+[ext_resource type="AudioStream" uid="uid://be1iwng7a68eh" path="res://Assets/Sounds/lesmaandando.wav" id="8_exddj"]
 
 [sub_resource type="Animation" id="Animation_uxfaj"]
 resource_name = "Attack_001"
@@ -469,3 +470,9 @@ animation = &"Running"
 script = ExtResource("7_5jkjj")
 animation_player = NodePath("../../AnimationPlayer")
 animation = &"Attack_001"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("8_exddj")
+volume_db = -34.639
+pitch_scale = 1.33
+autoplay = true

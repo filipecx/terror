@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://djxdr83qbicpb"]
+[gd_scene load_steps=12 format=4 uid="uid://djxdr83qbicpb"]
 
 [ext_resource type="Texture2D" uid="uid://r8weps0fog7g" path="res://Models/cedula_1real.png" id="1_16hd6"]
 [ext_resource type="Script" path="res://Scenes/Items/gold.gd" id="1_au452"]
 [ext_resource type="Script" path="res://Scenes/Systems/Inventory/item_data.gd" id="2_jt3p4"]
 [ext_resource type="Material" uid="uid://c8u512lfr61sc" path="res://Materials/interactable_highlights.tres" id="3_jca5h"]
+[ext_resource type="AudioStream" uid="uid://b1pyxi5us6oou" path="res://Assets/Sounds/grab.wav" id="5_eh2nr"]
 
 [sub_resource type="Resource" id="Resource_e8i8t"]
 script = ExtResource("2_jt3p4")
@@ -92,3 +93,6 @@ surface_material_override/0 = ExtResource("3_jca5h")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.10352e-05, 0.00283813, -0.00305176)
 shape = SubResource("BoxShape3D_uclyk")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_eh2nr")

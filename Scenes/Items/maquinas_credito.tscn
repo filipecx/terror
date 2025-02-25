@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://deqxfww65pnbg"]
+[gd_scene load_steps=12 format=4 uid="uid://deqxfww65pnbg"]
 
 [ext_resource type="Texture2D" uid="uid://b5gnd4jq2pagp" path="res://Models/maquina_creditos_maquina_creeditos.png" id="1_6udst"]
 [ext_resource type="Script" path="res://Scenes/Items/credit_machine.gd" id="1_dyhgr"]
 [ext_resource type="Resource" uid="uid://dgm0hg4bcnloe" path="res://Resources/RUCard.tres" id="2_7b7kl"]
 [ext_resource type="Resource" uid="uid://cpt8dsc12fcv7" path="res://Resources/CreditMachine.tres" id="2_ryilj"]
 [ext_resource type="Material" uid="uid://c8u512lfr61sc" path="res://Materials/interactable_highlights.tres" id="3_qj3yd"]
+[ext_resource type="AudioStream" uid="uid://bxqciltgv14xq" path="res://Assets/Sounds/caching.wav" id="6_h8pk4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jtiiu"]
 resource_name = "maquina_creditos"
@@ -80,3 +81,6 @@ surface_material_override/0 = ExtResource("3_qj3yd")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00152588, -0.00144958, -6.10352e-05)
 shape = SubResource("BoxShape3D_10a60")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_h8pk4")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=4 uid="uid://b04shang4qar6"]
+[gd_scene load_steps=11 format=4 uid="uid://b04shang4qar6"]
 
 [ext_resource type="Texture2D" uid="uid://b1fi4xg72y8js" path="res://Models/papel_doce_goiabada.png" id="1_7sh6w"]
 [ext_resource type="Script" path="res://Scenes/Systems/Interaction/collectable_object.gd" id="1_plb3g"]
 [ext_resource type="Resource" uid="uid://ccqsoj2s5wr6m" path="res://Resources/Goiabada.tres" id="2_6rcim"]
 [ext_resource type="Material" uid="uid://c8u512lfr61sc" path="res://Materials/interactable_highlights.tres" id="3_iklni"]
+[ext_resource type="AudioStream" uid="uid://ckyhdy57uj6qw" path="res://Assets/Sounds/plasticcrashing.wav" id="5_x3sxe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kevuh"]
 resource_name = "Material.005"
@@ -81,3 +82,6 @@ surface_material_override/0 = ExtResource("3_iklni")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00326538, 0.0043335, -0.00134277)
 shape = SubResource("BoxShape3D_m3g7g")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_x3sxe")
