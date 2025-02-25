@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://drg0xlpj8tlmi"]
 
 [ext_resource type="Script" path="res://Scenes/Systems/Menus/game_menu.gd" id="1_5qos5"]
-[ext_resource type="Texture2D" uid="uid://bh3p0g4tvdfei" path="res://Scenes/Systems/Menus/menu2.png" id="2_8tdtq"]
+[ext_resource type="Texture2D" uid="uid://bdkeo81co0y2g" path="res://Scenes/Systems/Menus/menu4.png" id="2_hsh5j"]
 
 [sub_resource type="Theme" id="Theme_n27lp"]
 
@@ -35,11 +35,12 @@ theme = SubResource("Theme_n27lp")
 theme_override_styles/panel = SubResource("StyleBoxFlat_vw6sg")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel"]
+layout_mode = 0
 offset_left = -390.0
 offset_top = -32.0
 offset_right = 1590.0
 offset_bottom = 1048.0
-texture = ExtResource("2_8tdtq")
+texture = ExtResource("2_hsh5j")
 
 [node name="Quit" type="Button" parent="CanvasLayer/Panel"]
 layout_mode = 1
