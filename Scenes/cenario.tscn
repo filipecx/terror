@@ -225,5 +225,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26596, 1.722, -12.5999)
 
 [node name="ru3" parent="NavigationRegion3D" instance=ExtResource("22_ygs2p")]
 
-[connection signal="door_open_signal" from="NavigationRegion3D/Objetos/Catraca" to="NavigationRegion3D/Objetos/Porta_dentro" method="_on_catraca_door_open_signal"]
+[node name="teto" parent="NavigationRegion3D/ru3" index="98"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -49.4973, 0)
+
+[node name="tetoru2" parent="NavigationRegion3D/ru3" index="99"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -49.4973, 0)
+
 [connection signal="door_open_signal" from="NavigationRegion3D/Objetos/Catraca" to="NavigationRegion3D/Objetos/Porta_dentro" method="open_door"]
+[connection signal="door_open_signal" from="NavigationRegion3D/Objetos/Catraca" to="NavigationRegion3D/Objetos/Porta_dentro" method="_on_catraca_door_open_signal"]
+
+[editable path="NavigationRegion3D/ru3"]

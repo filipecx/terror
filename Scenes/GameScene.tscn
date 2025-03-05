@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://do0tgvqi2bp8x"]
+[gd_scene load_steps=15 format=3 uid="uid://do0tgvqi2bp8x"]
 
 [ext_resource type="PackedScene" uid="uid://bh0em578t2qe4" path="res://Scenes/Systems/GameManager/GameManager.tscn" id="1_cfgmv"]
 [ext_resource type="PackedScene" uid="uid://ctgms144qf6b5" path="res://Scenes/cenario.tscn" id="2_kivs8"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://djxdr83qbicpb" path="res://Scenes/Items/cedula.tscn" id="5_aislc"]
 [ext_resource type="Resource" uid="uid://cat1u5bacsae0" path="res://Resources/Lixeira.tres" id="6_ipl8b"]
 [ext_resource type="AudioStream" uid="uid://enehc4eucyrq" path="res://Assets/Sounds/ambiente.mp3" id="8_ispq8"]
+[ext_resource type="PackedScene" uid="uid://bgrgnejnqrh83" path="res://Scenes/Systems/Menus/lose_menu.tscn" id="9_tlinj"]
 [ext_resource type="PackedScene" uid="uid://cy35nan6j4v0g" path="res://Scenes/Systems/Menus/win_menu.tscn" id="10_kiwpy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x3rv7"]
@@ -28,6 +29,7 @@ tonemap_mode = 2
 [node name="root" type="Node3D"]
 
 [node name="GameManager" parent="." instance=ExtResource("1_cfgmv")]
+lose_menu = NodePath("LoseGame")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="GameManager"]
 environment = SubResource("Environment_bt6uk")
@@ -123,7 +125,22 @@ money = 1.5
 [node name="GameUi" parent="GameManager" instance=ExtResource("4_7gm6e")]
 z_index = 1
 
+[node name="FeedbackLabel" parent="GameManager/GameUi/CanvasLayer/Control" index="1"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -428.5
+offset_right = 0.5
+offset_bottom = -397.5
+
+[node name="LoseGame" parent="GameManager" instance=ExtResource("9_tlinj")]
+visible = false
+
 [node name="WinGame" parent="GameManager" instance=ExtResource("10_kiwpy")]
+visible = false
 
 [node name="CanvasLayer" parent="GameManager/WinGame" index="0"]
 visible = false
@@ -139,4 +156,5 @@ autoplay = true
 
 [editable path="GameManager/Cenario"]
 [editable path="GameManager/GameUi"]
+[editable path="GameManager/LoseGame"]
 [editable path="GameManager/WinGame"]

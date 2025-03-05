@@ -1,7 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://drg0xlpj8tlmi"]
-
-[ext_resource type="Script" path="res://Scenes/Systems/Menus/game_menu.gd" id="1_5qos5"]
-[ext_resource type="Texture2D" uid="uid://bdkeo81co0y2g" path="res://Scenes/Systems/Menus/menu4.png" id="2_hsh5j"]
+[gd_scene load_steps=3 format=3 uid="uid://bgrgnejnqrh83"]
 
 [sub_resource type="Theme" id="Theme_n27lp"]
 
@@ -20,9 +17,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-script = ExtResource("1_5qos5")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 anchors_preset = 15
@@ -34,20 +31,20 @@ mouse_filter = 1
 theme = SubResource("Theme_n27lp")
 theme_override_styles/panel = SubResource("StyleBoxFlat_vw6sg")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel"]
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -990.0
-offset_top = -414.0
-offset_right = 990.0
-offset_bottom = 666.0
+offset_left = -100.5
+offset_top = -11.5
+offset_right = 100.5
+offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_8tdtq")
+text = "Infelizmente você perdeu"
 
 [node name="Quit" type="Button" parent="CanvasLayer/Panel"]
 layout_mode = 1
@@ -64,7 +61,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Quit"
 
-[node name="Start" type="Button" parent="CanvasLayer/Panel"]
+[node name="Restart" type="Button" parent="CanvasLayer/Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -77,7 +74,4 @@ offset_right = 33.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Start"
-
-[connection signal="pressed" from="CanvasLayer/Panel/Quit" to="." method="_on_ExitButton_pressed"]
-[connection signal="pressed" from="CanvasLayer/Panel/Start" to="." method="_on_StartButton_pressed"]
+text = "Restart"
