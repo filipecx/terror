@@ -35,19 +35,12 @@ theme = SubResource("Theme_n27lp")
 theme_override_styles/panel = SubResource("StyleBoxFlat_vw6sg")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -990.0
-offset_top = -414.0
-offset_right = 990.0
-offset_bottom = 666.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_8tdtq")
+layout_mode = 0
+offset_left = -390.0
+offset_top = -32.0
+offset_right = 1590.0
+offset_bottom = 1048.0
+texture = ExtResource("2_hsh5j")
 
 [node name="Quit" type="Button" parent="CanvasLayer/Panel"]
 layout_mode = 1

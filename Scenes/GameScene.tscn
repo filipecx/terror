@@ -155,6 +155,7 @@ autoplay = true
 [connection signal="pressed" from="GameManager/WinGame/CanvasLayer/Panel/Restart" to="GameManager/Cenario/NavigationRegion3D/Objetos/WinArea" method="_on_restart_button_pressed"]
 
 [editable path="GameManager/Cenario"]
+[editable path="GameManager/Cenario/NavigationRegion3D/ru3"]
 [editable path="GameManager/GameUi"]
 [editable path="GameManager/LoseGame"]
 [editable path="GameManager/WinGame"]
